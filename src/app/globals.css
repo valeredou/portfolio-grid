@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "SF";
+  font-weight: 400;
+  src: url("../../public/fonts/SFPRODISPLAYREGULAR.OTF");
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: black;
+  background: #ebebec;
+}
+
+.wrapper {
+  display: grid;
+  width: 100%;
+  max-width: 80%;
+  margin: 32px auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(328px, auto) minmax(328px, auto) minmax(
+      328px,
+      auto
+    );
+  grid-auto-columns: minmax(260px, 1fr) 1fr 1fr minmax(220px, 1fr);
+  grid-auto-rows: minmax(328px, max-content);
+  column-gap: 32px;
+  row-gap: 32px;
+}
+.tile {
+  padding: 20px 30px 30px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 18px;
+}
+
+.tile.first {
+  font-family: "SF", sans-serif;
+  font-size: 4rem;
+  color: white;
+  background-image: url("../../public/vd-compressed.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  line-height: 60px;
+  padding: 90px 20px;
+}
+
+.title {
+  display: flex;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.char {
+  transform: translateY(115px);
+  transition: all 0.5s;
+}
+
+.job {
+  opacity: 0;
+  color: #86868b;
+  font-size: 2.5rem;
+}
