@@ -13,6 +13,7 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
+    "framer-motion": "^10.12.16",
     "gsap": "^3.11.5",
     "i18next": "^22.5.0",
     "i18next-browser-languagedetector": "^7.0.2",

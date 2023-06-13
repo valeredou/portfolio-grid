@@ -1,20 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import Tile from "@/components/Tile";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import Card from "@/components/Card";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTranslation } from "../i18n/client";
 import { gsap } from "gsap";
 import SplitType from "split-type";
+import { isMobile } from "react-device-detect";
+import { cardData } from "@/Cardlist";
 
 export default function Home({ params: { lng } }) {
   const { t } = useTranslation(lng);
+  const [cardSelected, setCardSelected] = useState(null);
 
   const title = useRef();
   const job = useRef();
   const name = "Valère Douillé";
 
-  useLayoutEffect(() => {
+  /*   useLayoutEffect(() => {
     // Refs allow you to access DOM nodes
     console.log(title); // { current: div.box }teste
     // then we can animate them like so...
@@ -27,15 +30,26 @@ export default function Home({ params: { lng } }) {
       duration: 0.1,
     });
 
-    timeline.to(job.current, {
-      opacity: 1,
-      duration: 0.5,
-    });
-  });
+    timeline.to(
+      job.current,
+      {
+        opacity: 1,
+        duration: 0.5,
+      },
+      ">0.5"
+    );
+  }); */
+
+  console.log(cardSelected);
 
   return (
-    <div className={"wrapper"}>
-      <Tile className="first">
+    <div className={`wrapper ${isMobile && "mobile"}`}>
+      {/* <Card
+        className="first"
+        id="VD"
+        isSelected={cardSelected === "VD"}
+        setCardSelected={setCardSelected}
+      >
         <div ref={title} id="title" className="title">
           {name.split("").map((letter) => {
             return (
@@ -48,14 +62,25 @@ export default function Home({ params: { lng } }) {
         <div ref={job} className="job">
           {"Développeur Web"}
         </div>
-      </Tile>
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
+      </Card>
+      <Card
+        id="test"
+        isSelected={cardSelected === "VD"}
+        setCardSelected={setCardSelected}
+      >
+        {" "}
+        CARD SELECTED : {cardSelected}
+      </Card> */}
+      {cardData.map((card) => {
+        return (
+          <Card
+            key={card.id}
+            isSelected={cardSelected === card.id}
+            setCardSelected={setCardSelected}
+            {...card}
+          />
+        );
+      })}
     </div>
   );
 }

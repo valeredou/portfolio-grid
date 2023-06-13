@@ -1,0 +1,141 @@
+.card {
+  padding: 25px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 18px;
+
+  @include for-phone-only() {
+    grid-column-start: span 4;
+    grid-column-end: span 4;
+    grid-row-start: span 1;
+    grid-row-end: span 1;
+  }
+
+  .overlay {
+    z-index: 1;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    will-change: opacity;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 990px;
+    .close {
+      display: block;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100vw;
+      left: 50%;
+
+      transform: translateX(-50%);
+    }
+  }
+
+  .card-content-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    pointer-events: none;
+
+    .card-content {
+      pointer-events: auto;
+      position: relative;
+      border-radius: 20px;
+      background: #1c1c1e;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      .content-container {
+        padding: 460px 35px 35px 35px;
+        max-width: 700px;
+        width: 90vw;
+      }
+    }
+
+    &.open {
+      top: 0;
+      left: 0;
+      right: 0;
+      position: fixed;
+      z-index: 1;
+      overflow: hidden;
+      padding: 40px 0;
+
+      .card-content {
+        height: auto;
+        max-width: 700px;
+        overflow: hidden;
+      }
+    }
+
+    .content-container {
+      padding: 460px 35px 35px 35px;
+      max-width: 700px;
+      width: 90vw;
+    }
+  }
+
+  .card-open-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .card-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 420px;
+    width: 100vw;
+    transform: translateZ(0);
+  }
+
+  .title-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 300px;
+  }
+}
+
+/* .card.first {
+  font-family: "SF", sans-serif;
+  font-size: 4rem;
+  color: white;
+  background-image: url("/vd-compressed.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  line-height: 60px;
+  padding: 90px 20px;
+} */
+
+.title {
+  display: flex;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.char {
+  transform: translateY(115px);
+  transition: all 0.5s;
+}
+
+.job {
+  opacity: 0;
+  color: #86868b;
+  font-size: 2.5rem;
+}
