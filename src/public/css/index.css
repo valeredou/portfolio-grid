@@ -3,8 +3,8 @@
 @tailwind utilities;
 .wrapper {
   display: grid;
-  width: 100%;
-  max-width: 95%;
+  width: 95%;
+  max-width: 1600px;
   margin: 32px auto;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: minmax(328px, auto) minmax(328px, auto) minmax(328px, auto);
@@ -13,17 +13,22 @@
   -moz-column-gap: 32px;
        column-gap: 32px;
   row-gap: 32px;
+  background: #ebebec;
 }
 
+/*************************************************************************  
+
+                              GLOBAL CARD
+
+*************************************************************************/
 .card {
-  padding: 25px;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
   position: relative;
   overflow: hidden;
-  background-color: #fff;
   border-radius: 18px;
+  background: #fafafa;
 }
 @media (max-width: 599px) {
   .card {
@@ -43,7 +48,6 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 990px;
 }
 .card .overlay .close {
   display: block;
@@ -61,6 +65,18 @@
   display: block;
   pointer-events: none;
 }
+.card .card-content-container.open {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1;
+}
+.card .card-content-container.open .card-content {
+  height: auto;
+  max-width: 700px;
+  overflow: hidden;
+}
 .card .card-content-container .card-content {
   pointer-events: auto;
   position: relative;
@@ -76,22 +92,7 @@
   max-width: 700px;
   width: 90vw;
 }
-.card .card-content-container.open {
-  top: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
-  z-index: 1;
-  overflow: hidden;
-  padding: 40px 0;
-}
-.card .card-content-container.open .card-content {
-  height: auto;
-  max-width: 700px;
-  overflow: hidden;
-}
 .card .card-content-container .content-container {
-  padding: 460px 35px 35px 35px;
   max-width: 700px;
   width: 90vw;
 }
@@ -118,7 +119,12 @@
   max-width: 300px;
 }
 
-/* .card.first {
+/*************************************************************************  
+
+                            Hero Card
+
+*************************************************************************/
+.card.hero {
   font-family: "SF", sans-serif;
   font-size: 4rem;
   color: white;
@@ -131,22 +137,40 @@
   grid-row-end: span 2;
   line-height: 60px;
   padding: 90px 20px;
-} */
-.title {
+}
+.card.hero .title {
   display: flex;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
-
-.char {
+.card.hero .char {
   transform: translateY(115px);
   transition: all 0.5s;
 }
-
-.job {
+.card.hero .job {
   opacity: 0;
   color: #86868b;
   font-size: 2.5rem;
+}
+
+/*************************************************************************  
+
+                              HELLO CARD
+
+*************************************************************************/
+.card.hello {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+}
+.card.hello h1 {
+  color: #121517;
+  margin-bottom: 16px;
+  font-size: 36px;
+  line-height: 38px;
+  font-weight: 700;
 }
 
 @layer base {

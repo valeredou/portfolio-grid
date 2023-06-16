@@ -1,12 +1,17 @@
+/*************************************************************************  
+
+                              GLOBAL CARD
+
+*************************************************************************/
+
 .card {
-  padding: 25px;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
   position: relative;
   overflow: hidden;
-  background-color: #fff;
   border-radius: 18px;
+  background: $white;
 
   @include for-phone-only() {
     grid-column-start: span 4;
@@ -25,7 +30,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    max-width: 990px;
+    //max-width: 990px;
     .close {
       display: block;
       position: fixed;
@@ -45,6 +50,20 @@
     display: block;
     pointer-events: none;
 
+    &.open {
+      top: 0;
+      left: 0;
+      right: 0;
+      position: fixed;
+      z-index: 1;
+
+      .card-content {
+        height: auto;
+        max-width: 700px;
+        overflow: hidden;
+      }
+    }
+
     .card-content {
       pointer-events: auto;
       position: relative;
@@ -61,24 +80,8 @@
       }
     }
 
-    &.open {
-      top: 0;
-      left: 0;
-      right: 0;
-      position: fixed;
-      z-index: 1;
-      overflow: hidden;
-      padding: 40px 0;
-
-      .card-content {
-        height: auto;
-        max-width: 700px;
-        overflow: hidden;
-      }
-    }
-
     .content-container {
-      padding: 460px 35px 35px 35px;
+      //padding: 460px 35px 35px 35px;
       max-width: 700px;
       width: 90vw;
     }
@@ -110,7 +113,13 @@
   }
 }
 
-/* .card.first {
+/*************************************************************************  
+
+                            Hero Card
+
+*************************************************************************/
+
+.card.hero {
   font-family: "SF", sans-serif;
   font-size: 4rem;
   color: white;
@@ -123,19 +132,40 @@
   grid-row-end: span 2;
   line-height: 60px;
   padding: 90px 20px;
-} */
+  .title {
+    display: flex;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .char {
+    transform: translateY(115px);
+    transition: all 0.5s;
+  }
 
-.title {
+  .job {
+    opacity: 0;
+    color: #86868b;
+    font-size: 2.5rem;
+  }
+}
+
+/*************************************************************************  
+
+                              HELLO CARD
+
+*************************************************************************/
+
+.card.hello {
   display: flex;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-.char {
-  transform: translateY(115px);
-  transition: all 0.5s;
-}
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
 
-.job {
-  opacity: 0;
-  color: #86868b;
-  font-size: 2.5rem;
+  h1 {
+    color: $black;
+    margin-bottom: 16px;
+    font-size: 36px;
+    line-height: 38px;
+    font-weight: 700;
+  }
 }

@@ -1,21 +1,12 @@
 import * as React from "react";
 import { motion, useDeprecatedInvertedScale } from "framer-motion";
-import { closeSpring, openSpring } from "./animations";
 
 export const Title = ({ title, category, isSelected }) => {
-  const inverted = useDeprecatedInvertedScale();
   const x = isSelected ? 30 : 15;
   const y = x;
 
   return (
-    <motion.div
-      className="title-container"
-      initial={false}
-      animate={{ x, y }}
-      transition={isSelected ? openSpring : closeSpring}
-      transformTemplate={scaleTranslate}
-      style={{ ...inverted, originX: 0, originY: 0 }}
-    >
+    <motion.div className="title-container" initial={false} animate={{ x, y }}>
       <span className="category">{category}</span>
       <h2>{title}</h2>
     </motion.div>
