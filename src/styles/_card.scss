@@ -13,6 +13,12 @@
   border-radius: 18px;
   background: $white;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px;
+
   @include for-phone-only() {
     grid-column-start: span 4;
     grid-column-end: span 4;
@@ -20,6 +26,40 @@
     grid-row-end: span 1;
   }
 
+  .tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    align-self: flex-start;
+    background: $black;
+    color: $white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+  }
+
+  h1.title {
+    color: $white;
+    line-height: 32px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    color: $white;
+  }
+}
+
+/*************************************************************************  
+
+                              EXPANDABLE CARD
+
+*************************************************************************/
+
+.card.expandable {
   .overlay {
     z-index: 1;
     position: fixed;
@@ -168,4 +208,230 @@
     line-height: 38px;
     font-weight: 700;
   }
+}
+
+/*************************************************************************  
+
+                              LINKS CARD
+
+*************************************************************************/
+
+.card.links {
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+
+  .links-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 40px;
+    .link {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        opacity: 0.7;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .flags-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .flag {
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+/*************************************************************************  
+
+                              ABOUT CARD
+
+*************************************************************************/
+
+.card.about {
+  grid-area: 3 / 1 / 5 / 2;
+  background-image: url("/images/gradient3.jpg");
+  background-size: cover;
+}
+
+/*************************************************************************  
+
+                              REACT CARD
+
+*************************************************************************/
+
+.card.react {
+  grid-area: 3 / 2 / 4 / 4;
+  background-image: url("/images/gradient3.jpg");
+  background-size: cover;
+
+  .canvas {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+  }
+}
+
+/*************************************************************************  
+
+                              HTMLCSSJS CARD
+
+*************************************************************************/
+
+.card.htmlcssjs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  grid-area: 4 / 2 / 4 / 4;
+  background: rgb(229, 96, 39);
+  background: linear-gradient(
+    112deg,
+    rgba(229, 96, 39, 1) 0%,
+    rgba(39, 96, 229, 1) 50%,
+    rgba(242, 211, 35, 1) 100%
+  );
+  @include for-phone-only() {
+    flex-direction: column;
+  }
+
+  .language {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    .name {
+      margin-top: 10px;
+    }
+  }
+}
+
+/*************************************************************************  
+
+                              PHP CARD
+
+*************************************************************************/
+
+.card.php {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #8992ba;
+}
+
+/*************************************************************************  
+
+                              PHP CARD
+
+*************************************************************************/
+
+.card.php {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(137, 146, 186);
+  background: linear-gradient(
+    236deg,
+    rgba(137, 146, 186, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+/*************************************************************************  
+
+                              SQL CARD
+
+*************************************************************************/
+
+.card.sql {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background-image: url("/images/data2.jpg");
+  background-size: cover;
+  img {
+    width: 150px;
+    &:first-of-type {
+      width: 130px;
+    }
+  }
+}
+
+/*************************************************************************  
+
+                              WORK CARD
+
+*************************************************************************/
+
+.card.work {
+  grid-area: 5 / 4 / 7 / 5;
+  background-image: url("/images/gradient3.jpg");
+  background-size: cover;
+}
+
+/*************************************************************************  
+
+                              ESURVEY CARD
+
+*************************************************************************/
+
+.card.esurvey {
+  grid-area: 5 / 2 / 7 / 4;
+  background-image: url("/images/gradient3.jpg");
+  background-size: cover;
+}
+
+/*************************************************************************  
+
+                              3DIFFERENCES CARD
+
+*************************************************************************/
+
+.card.differences {
+  grid-area: 5 / 1 / 6 / 2;
+  background-image: url("/images/gradient3.jpg");
+  background-size: cover;
+}
+
+/*************************************************************************  
+
+                              portfolio CARD
+
+*************************************************************************/
+
+.card.portfolio {
+  grid-area: 6 / 1 / 7 / 2;
+  background-image: url("/images/gradient3.jpg");
+  background-size: cover;
+}
+
+/*************************************************************************  
+
+                              portfolio CARD
+
+*************************************************************************/
+
+.card.contact {
+  grid-area: 7 / 1 / 8 / 5;
+  background-image: url("/images/gradient3.jpg");
+  background-size: cover;
 }

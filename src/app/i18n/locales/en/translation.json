@@ -1,5 +1,16 @@
 {
   "hello": "Hello",
   "developpeur": "Web Developer",
-  "intro": " I am a freelance web developer specializing in web development for the past 5 years. I am passionate about creating beautiful interfaces, UX, and fast websites."
+  "intro": " I am a freelance web developer specializing in front-end web development for the past 5 years. I am passionate about creating beautiful interfaces, UX, and fast websites.",
+  "about": {
+    "title": "About",
+    "text1": "Based in Lille, I have several years of experience in corporate development, which has allowed me to gain a comprehensive understanding of the web industry. ",
+    "text2": "My main goal is to provide pleasant user experiences by creating aesthetic and intuitive interfaces. I firmly believe that design and functionality go hand in hand to deliver quality websites.",
+    "text3": "Feel free to contact me. I would be delighted to discuss your project and contribute to its success."
+  },
+  "skills": "Skills",
+  "work": {
+    "title": "Projects",
+    "tag": "Project"
+  }
 }

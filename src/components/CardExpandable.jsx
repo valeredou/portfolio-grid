@@ -48,7 +48,13 @@ const CardExpandable = ({
   // useWheelScroll(containerRef, y, constraints, checkSwipeToDismiss, isSelected);
 
   return (
-    <div className={`card ${className ? className : ""}`} ref={containerRef}>
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.2, delay: 1 }}
+      className={`card expandable ${className ? className : ""}`}
+      ref={containerRef}
+    >
       <Overlay isSelected={isSelected} setCardSelected={setCardSelected} />
       <motion.div
         layout
@@ -78,7 +84,7 @@ const CardExpandable = ({
           onClick={() => setCardSelected(id)}
         ></div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

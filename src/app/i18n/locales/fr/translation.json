@@ -1,5 +1,16 @@
 {
   "hello": "Bonjour",
   "developpeur": "Développeur Web",
-  "intro": "Je suis un développeur freelance spécialisé dans le développement web depuis 5 ans. Passionné par la création de belles interfaces, l'expérience utilisateur (UX) et les sites rapides, j'ai acquis une expertise solide dans le domaine."
+  "intro": "Je suis un développeur freelance spécialisé dans le développement web front-end depuis 5 ans. Passionné par la création de belles interfaces, l'expérience utilisateur (UX) et les sites rapides, j'ai acquis une expertise solide dans le domaine.",
+  "about": {
+    "title": "À propos",
+    "text1": "Basé à Lille, je compte plusieurs années de développement en entreprise, ce qui m’a permis d’acquérir une vision globale du monde du web.     ",
+    "text2": "Mon objectif principal est de fournir des expériences utilisateur agréables en créant des interfaces esthétiques et intuitives. Je crois fermement que le design et la fonctionnalité vont de pair pour offrir des sites web de qualité. ",
+    "text3": "N'hésitez pas à me contacter. Je serais ravi de discuter de votre projet et de contribuer à son succès."
+  },
+  "skills": "Compétences",
+  "work": {
+    "title": "Projets",
+    "tag": "Projet"
+  }
 }
