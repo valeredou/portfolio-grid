@@ -20,10 +20,8 @@
   padding: 40px;
 
   @include for-phone-only() {
-    grid-column-start: span 4;
-    grid-column-end: span 4;
-    grid-row-start: span 1;
-    grid-row-end: span 1;
+    grid-column-start: span 4 !important;
+    grid-column-end: span 4 !important;
   }
 
   .tag {
