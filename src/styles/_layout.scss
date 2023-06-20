@@ -13,4 +13,9 @@
   column-gap: 32px;
   row-gap: 32px;
   background: $color-background;
+
+  @include for-phone-only() {
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
 }

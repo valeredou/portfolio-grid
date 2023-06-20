@@ -20,8 +20,9 @@
   padding: 40px;
 
   @include for-phone-only() {
-    grid-column-start: span 4 !important;
+    grid-column-start: span 1 !important;
     grid-column-end: span 4 !important;
+    grid-area: initial !important;
   }
 
   .tag {
@@ -163,6 +164,7 @@
   color: white;
   background-image: url("/vd-compressed.jpg");
   background-repeat: no-repeat;
+  background-position-x: center;
   background-size: cover;
   grid-column-start: 1;
   grid-column-end: span 3;
