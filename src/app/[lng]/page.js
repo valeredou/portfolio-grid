@@ -152,7 +152,7 @@ export default function Home({ params: { lng } }) {
             height={20}
             src="/images/css.png"
           />
-          <div className="name">HTML</div>
+          <div className="name">CSS</div>
         </div>
         <div className="language">
           <Image

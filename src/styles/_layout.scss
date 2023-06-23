@@ -3,6 +3,7 @@
   width: 95%;
   max-width: 1600px;
   margin: 32px auto;
+
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: minmax(328px, auto) minmax(328px, auto) minmax(
       328px,
@@ -15,6 +16,8 @@
   background: $color-background;
 
   @include for-phone-only() {
+    padding-top: 20px;
+    padding-bottom: 40px;
     grid-auto-columns: 1fr;
     grid-template-columns: 1fr;
   }

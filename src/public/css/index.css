@@ -17,6 +17,8 @@
 }
 @media (max-width: 599px) {
   .wrapper {
+    padding-top: 20px;
+    padding-bottom: 40px;
     grid-auto-columns: 1fr;
     grid-template-columns: 1fr;
   }
@@ -67,6 +69,11 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 20px;
+}
+@media (max-width: 599px) {
+  .card h1.title {
+    font-size: 1.2rem;
+  }
 }
 .card .text {
   color: #fafafa;
@@ -178,10 +185,22 @@
   line-height: 60px;
   padding: 90px 20px;
 }
+@media (max-width: 599px) {
+  .card.hero {
+    font-size: 3rem;
+  }
+}
 .card.hero .title {
   display: flex;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+@media (max-width: 599px) {
+  .card.hero .title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
 }
 .card.hero .char {
   transform: translateY(115px);
@@ -191,6 +210,13 @@
   opacity: 0;
   color: #86868b;
   font-size: 2.5rem;
+}
+@media (max-width: 599px) {
+  .card.hero .job {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
 }
 
 /*************************************************************************  
@@ -301,6 +327,7 @@
 @media (max-width: 599px) {
   .card.htmlcssjs {
     flex-direction: column;
+    gap: 20px;
   }
 }
 .card.htmlcssjs .language {

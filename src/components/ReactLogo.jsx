@@ -1,7 +1,14 @@
 import * as THREE from "three";
 import { useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Trail, Float, Line, Sphere, Stars } from "@react-three/drei";
+import {
+  Trail,
+  Float,
+  Line,
+  Sphere,
+  Stars,
+  OrbitControls,
+} from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
 export default function ReactLogo() {
@@ -15,6 +22,7 @@ export default function ReactLogo() {
       <EffectComposer>
         <Bloom mipmapBlur luminanceThreshold={1.5} radius={0.8} />
       </EffectComposer>
+      <OrbitControls />
     </Canvas>
   );
 }
