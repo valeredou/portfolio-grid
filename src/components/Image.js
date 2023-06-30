@@ -2,12 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { closeSpring } from "./Animations";
 
-export const Image = ({
-  id,
-  isSelected,
-  pointOfInterest = 0,
-  backgroundColor,
-}) => {
+export const Image = ({ id, isSelected, backgroundColor }) => {
   return (
     <motion.div
       className="card-image-container"

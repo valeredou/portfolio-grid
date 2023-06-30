@@ -71,7 +71,6 @@ const CardExpandable = ({
             id={id}
             alt="image"
             isSelected={isSelected}
-            pointOfInterest={pointOfInterest}
             backgroundColor={backgroundColor}
           />
           <Title title={title} category={category} isSelected={isSelected} />

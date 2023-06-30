@@ -6,6 +6,7 @@
   width: 95%;
   max-width: 1600px;
   margin: 32px auto;
+  padding-bottom: 32px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: minmax(328px, auto) minmax(328px, auto) minmax(328px, auto);
   grid-auto-columns: minmax(260px, 1fr) 1fr 1fr minmax(220px, 1fr);
@@ -18,7 +19,6 @@
 @media (max-width: 599px) {
   .wrapper {
     padding-top: 20px;
-    padding-bottom: 40px;
     grid-auto-columns: 1fr;
     grid-template-columns: 1fr;
   }
@@ -35,7 +35,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 25px;
   background: #fafafa;
   display: flex;
   flex-direction: column;
@@ -84,6 +84,9 @@
                               EXPANDABLE CARD
 
 *************************************************************************/
+.card.expandable {
+  padding: 0px;
+}
 .card.expandable .overlay {
   z-index: 1;
   position: fixed;
@@ -321,8 +324,6 @@
   align-items: center;
   justify-content: space-evenly;
   grid-area: 4/2/4/4;
-  background: rgb(229, 96, 39);
-  background: linear-gradient(112deg, rgb(229, 96, 39) 0%, rgb(39, 96, 229) 50%, rgb(242, 211, 35) 100%);
 }
 @media (max-width: 599px) {
   .card.htmlcssjs {
@@ -335,7 +336,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fafafa;
+  color: #86868b;
 }
 .card.htmlcssjs .language .name {
   margin-top: 10px;
@@ -393,7 +394,7 @@
 *************************************************************************/
 .card.work {
   grid-area: 5/4/7/5;
-  background-image: url("/images/gradient3.jpg");
+  background-image: url("/images/gradient5.jpg");
   background-size: cover;
 }
 
@@ -404,8 +405,6 @@
 *************************************************************************/
 .card.esurvey {
   grid-area: 5/2/7/4;
-  background-image: url("/images/gradient3.jpg");
-  background-size: cover;
 }
 
 /*************************************************************************  

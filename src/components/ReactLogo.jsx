@@ -8,6 +8,7 @@ import {
   Sphere,
   Stars,
   OrbitControls,
+  useScroll,
 } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
@@ -28,6 +29,10 @@ export default function ReactLogo() {
 }
 
 function Atom(props) {
+  const scroll = useScroll();
+
+  useFrame((state, delta) => {});
+
   const points = useMemo(
     () =>
       new THREE.EllipseCurve(0, 0, 3, 1.15, 0, 2 * Math.PI, false, 0).getPoints(

@@ -8,6 +8,7 @@ import { isMobile } from "react-device-detect";
 import { UilEnvelope } from "@iconscout/react-unicons";
 import Lottie from "lottie-react";
 import linkedinAnimation from "/public/linkedin-json.json";
+import workingAnimation from "/public/working-json.json";
 import githubAnimation from "/public/github-json.json";
 
 //Custom
@@ -18,6 +19,7 @@ import CardExpandable from "@/components/CardExpandable";
 import CardHero from "@/components/CardHero";
 import Link from "next/link";
 import ReactLogo from "@/components/ReactLogo";
+import { Contact } from "@/components/Contact";
 
 export default function Home({ params: { lng } }) {
   const { t } = useTranslation(lng);
@@ -204,6 +206,11 @@ export default function Home({ params: { lng } }) {
           ******************************************************/}
 
       <Card className={"work"} title={t("work.title")}>
+        <div className="text">{t("work.intro")}</div>
+        <Lottie className="working" animationData={workingAnimation} />
+      </Card>
+
+      <CardExpandable className={"esurvey"} tag={t("work.tag")}>
         <div className="text">
           {t("about.text1")}
           <br />
@@ -213,50 +220,25 @@ export default function Home({ params: { lng } }) {
           <br />
           {t("about.text3")}
         </div>
-      </Card>
+      </CardExpandable>
 
-      <Card className={"esurvey"} tag={t("work.tag")}>
-        <div className="text">
-          {t("about.text1")}
-          <br />
-          <br />
-          {t("about.text2")}
-          <br />
-          <br />
-          {t("about.text3")}
-        </div>
-      </Card>
-
-      <Card className={"differences"} tag={t("work.tag")}>
-        <div className="text"></div>
-      </Card>
-      <Card className={"portfolio"} tag={t("work.tag")}>
-        <div className="text"></div>
-      </Card>
-
-      <Card className={"contact"} tag={t("work.tag")}>
-        <div className="text">
-          {t("about.text1")}
-          <br />
-          <br />
-          {t("about.text2")}
-          <br />
-          <br />
-          {t("about.text3")}
-        </div>
-      </Card>
-
-      {/* {cardData.map((card) => {
+      {cardData.map((card) => {
         return (
           <CardExpandable
+            {...card}
             expandable
+            category={t("work.tag")}
             key={card.id}
             isSelected={cardSelected === card.id}
             setCardSelected={setCardSelected}
-            {...card}
+            className={card.id}
           />
         );
-      })} */}
+      })}
+
+      <Card className={"contact"}>
+        <Contact />
+      </Card>
     </motion.div>
   );
 }
