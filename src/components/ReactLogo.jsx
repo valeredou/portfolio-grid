@@ -8,13 +8,12 @@ import {
   Sphere,
   Stars,
   OrbitControls,
-  useScroll,
 } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
 export default function ReactLogo() {
   return (
-    <Canvas className="canvas" camera={{ position: [0, 0, 10] }}>
+    <Canvas className="canvas" camera={{ position: [0, 30, 50] }}>
       <color attach="background" args={["black"]} />
       <Float speed={4} rotationIntensity={1} floatIntensity={2}>
         <Atom />
@@ -29,9 +28,19 @@ export default function ReactLogo() {
 }
 
 function Atom(props) {
-  const scroll = useScroll();
+  const pos = new THREE.Vector3();
 
-  useFrame((state, delta) => {});
+  useFrame((state) => {
+    // Calculer la position de la caméra en fonction du défilement de la page
+    const scrollY = window.scrollY;
+    const newPositionZ = Math.max(8, 50 - scrollY * 0.1);
+    const newPositionY = Math.max(0, 30 - scrollY * 0.1);
+
+    pos.set(0, newPositionY, newPositionZ);
+
+    state.camera.position.lerp(pos, 0.1);
+    state.camera.updateProjectionMatrix();
+  });
 
   const points = useMemo(
     () =>
