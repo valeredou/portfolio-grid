@@ -7,6 +7,7 @@ export const cardData = [
     category: "work.tag",
     title: "e-survey",
     backgroundColor: "#6a67f6",
+    website: "e-survey",
   },
   // 3Differences
   {
@@ -14,6 +15,7 @@ export const cardData = [
     category: "work.tag",
     title: "3Differences",
     backgroundColor: "#ffffff",
+    website: "3Differences",
   },
   //portfolio
   {
@@ -21,5 +23,6 @@ export const cardData = [
     category: "work.tag",
     title: "Portfolio",
     backgroundColor: "#ffffff",
+    website: "Portfolio",
   },
 ];

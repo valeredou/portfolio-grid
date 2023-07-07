@@ -235,7 +235,18 @@ export default function Home({ params: { lng } }) {
             isSelected={cardSelected === card.id}
             setCardSelected={setCardSelected}
             className={card.id}
-          />
+            website={card.website}
+          >
+            <div className="text">
+              {t("about.text1")}
+              <br />
+              <br />
+              {t("about.text2")}
+              <br />
+              <br />
+              {t("about.text3")}
+            </div>
+          </CardExpandable>
         );
       })}
 

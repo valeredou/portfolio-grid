@@ -2,19 +2,24 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { closeSpring } from "./Animations";
 
-export const Image = ({ id, isSelected, backgroundColor }) => {
+export const Image = ({ id, isSelected, backgroundColor, website }) => {
   return (
     <motion.div
-      className="card-image-container"
+      layout
+      className={`card-image-container ${isSelected ? "open" : ""}`}
       style={{ backgroundColor, originX: 0, originY: 0 }}
     >
-      <motion.img
-        className="card-image"
-        src={`images/${id}.jpg`}
-        alt=""
-        initial={false}
-        transition={closeSpring}
-      />
+      {isSelected ? (
+        <motion.img
+          className="card-image"
+          src={`images/${id}.png`}
+          alt=""
+          initial={false}
+          transition={closeSpring}
+        />
+      ) : (
+        <div>{website}</div>
+      )}
     </motion.div>
   );
 };

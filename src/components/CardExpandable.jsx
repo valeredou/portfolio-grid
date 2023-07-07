@@ -23,6 +23,7 @@ const CardExpandable = ({
   history,
   pointOfInterest,
   backgroundColor,
+  website,
 }) => {
   const y = useMotionValue(0);
   const zIndex = useMotionValue(isSelected ? 2 : 0);
@@ -72,6 +73,7 @@ const CardExpandable = ({
             alt="image"
             isSelected={isSelected}
             backgroundColor={backgroundColor}
+            website={website}
           />
           <Title title={title} category={category} isSelected={isSelected} />
           {isSelected && <ContentPlaceholder />}
