@@ -1,8 +1,14 @@
 import * as React from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { closeSpring } from "./Animations";
+import Image from "next/image";
 
-export const Image = ({ id, isSelected, backgroundColor, website }) => {
+export const Img = ({ id, isSelected, backgroundColor, website, logo }) => {
+  useEffect(() => {
+    console.log(id, logo);
+  }, []);
+
   return (
     <motion.div
       layout
@@ -10,15 +16,14 @@ export const Image = ({ id, isSelected, backgroundColor, website }) => {
       style={{ backgroundColor, originX: 0, originY: 0 }}
     >
       {isSelected ? (
-        <motion.img
+        <Image
           className="card-image"
-          src={`images/${id}.png`}
+          fill
+          src={`/public/images/${id}.png`}
           alt=""
-          initial={false}
-          transition={closeSpring}
         />
       ) : (
-        <div>{website}</div>
+        <div>{logo !== "" ? "logo" : website}</div>
       )}
     </motion.div>
   );

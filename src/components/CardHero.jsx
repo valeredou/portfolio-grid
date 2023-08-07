@@ -36,9 +36,9 @@ const CardHero = ({ t }) => {
   return (
     <Card className="hero" id="VD">
       <div ref={title} id="title" className="title">
-        {name.split("").map((letter) => {
+        {name.split("").map((letter, index) => {
           return (
-            <div key={letter} className="char">
+            <div key={index} className="char">
               {letter === " " ? <span>&nbsp;</span> : letter}
             </div>
           );

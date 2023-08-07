@@ -1,12 +1,11 @@
 import { motion, useMotionValue } from "framer-motion";
 import Overlay from "./Overlay";
 import { ContentPlaceholder } from "./ContentPlaceholder";
-import { useInvertedBorderRadius } from "@/utils/use-inverted-border-radius";
 import { useScrollConstraints } from "@/utils/use-scroll-constraints";
-import { Image } from "./Image";
+import { Image, Img } from "./Image";
 import { useRef } from "react";
 import { Title } from "./Title";
-import { closeSpring, openSpring } from "./Animations";
+import { UilAngleRightB } from "@iconscout/react-unicons";
 
 // Distance in pixels a user has to scroll a cardExpandable down before we recognise
 // a swipe-to dismiss action.
@@ -17,6 +16,7 @@ const CardExpandable = ({
   isSelected,
   setCardSelected,
   children,
+  logo,
   id,
   title,
   category,
@@ -68,8 +68,9 @@ const CardExpandable = ({
           style={{ borderRadius: 20, zIndex }}
           onUpdate={checkZIndex}
         >
-          <Image
+          <Img
             id={id}
+            logo={logo}
             alt="image"
             isSelected={isSelected}
             backgroundColor={backgroundColor}
@@ -78,6 +79,12 @@ const CardExpandable = ({
           <Title title={title} category={category} isSelected={isSelected} />
           {isSelected && <ContentPlaceholder />}
         </motion.div>
+
+        {!isSelected && (
+          <div className="open-button" onClick={() => setCardSelected(id)}>
+            <UilAngleRightB className="chevron" />
+          </div>
+        )}
       </motion.div>
       {!isSelected && (
         <div

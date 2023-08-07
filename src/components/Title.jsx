@@ -1,5 +1,5 @@
 import * as React from "react";
-import { motion, useDeprecatedInvertedScale } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const Title = ({ title, category, isSelected }) => {
   const x = isSelected ? 30 : 15;
@@ -7,8 +7,7 @@ export const Title = ({ title, category, isSelected }) => {
 
   return (
     <motion.div className="title-container" initial={false} animate={{ x, y }}>
-      <span className="category">{category}</span>
-      <h2>{title}</h2>
+      <span className="tag">{category}</span>
     </motion.div>
   );
 };
