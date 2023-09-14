@@ -1,15 +1,14 @@
-import { motion, useMotionValue } from "framer-motion";
+import { useScroll, motion, useMotionValue } from "framer-motion";
 import Overlay from "./Overlay";
 import { ContentPlaceholder } from "./ContentPlaceholder";
 import { useScrollConstraints } from "@/utils/use-scroll-constraints";
+import { useWheelScroll } from "@/utils/use-wheel-scroll";
 import { Image, Img } from "./Image";
 import { useRef } from "react";
 import { Title } from "./Title";
 import { UilAngleRightB } from "@iconscout/react-unicons";
-
-// Distance in pixels a user has to scroll a cardExpandable down before we recognise
-// a swipe-to dismiss action.
-const dismissDistance = 150;
+import { UilTimes } from "@iconscout/react-unicons";
+import { openSpring, closeSpring } from "./Animations";
 
 const CardExpandable = ({
   className,
@@ -25,15 +24,20 @@ const CardExpandable = ({
   backgroundColor,
   website,
 }) => {
+  //const y = useMotionValue(0);
   const y = useMotionValue(0);
   const zIndex = useMotionValue(isSelected ? 2 : 0);
+
+  // Distance in pixels a user has to scroll a card down before we recognise
+  // a swipe-to dismiss action.
+  const dismissDistance = 150;
 
   // We'll use the opened card element to calculate the scroll constraints
   const cardRef = useRef(null);
   const constraints = useScrollConstraints(cardRef, isSelected);
 
   function checkSwipeToDismiss() {
-    y.get() > dismissDistance && history.push("/");
+    y.get() > dismissDistance && setCardSelected(null);
   }
 
   function checkZIndex(latest) {
@@ -46,13 +50,11 @@ const CardExpandable = ({
 
   // When this card is selected, attach a wheel event listener
   const containerRef = useRef(null);
-  // useWheelScroll(containerRef, y, constraints, checkSwipeToDismiss, isSelected);
+  useWheelScroll(containerRef, y, constraints, checkSwipeToDismiss, isSelected);
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.2, delay: 1 }}
+      layout
       className={`card expandable ${className ? className : ""}`}
       ref={containerRef}
     >
@@ -62,10 +64,14 @@ const CardExpandable = ({
         className={`card-content-container ${isSelected && "open"}`}
       >
         <motion.div
-          className="card-content"
           layout
           ref={cardRef}
-          style={{ borderRadius: 20, zIndex }}
+          className="card-content"
+          style={{ zIndex, y }}
+          layoutTransition={isSelected ? openSpring : closeSpring}
+          drag={isSelected ? "y" : false}
+          dragConstraints={constraints}
+          onDrag={checkSwipeToDismiss}
           onUpdate={checkZIndex}
         >
           <Img
@@ -77,7 +83,13 @@ const CardExpandable = ({
             website={website}
           />
           <Title title={title} category={category} isSelected={isSelected} />
-          {isSelected && <ContentPlaceholder />}
+          {/* {isSelected && <ContentPlaceholder />} */}
+          <ContentPlaceholder />
+          {isSelected && (
+            <div className="close-button" onClick={() => setCardSelected(null)}>
+              <UilTimes className="cross" />
+            </div>
+          )}
         </motion.div>
 
         {!isSelected && (

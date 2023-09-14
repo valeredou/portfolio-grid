@@ -1,12 +1,24 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import { closeSpring, openSpring } from "./Animations";
 
 export const Title = ({ title, category, isSelected }) => {
   const x = isSelected ? 30 : 15;
   const y = x;
 
   return (
-    <motion.div className="title-container" initial={false} animate={{ x, y }}>
+    // <motion.div className="title-container" initial={false} animate={{ x, y }}>
+    //   <span className="tag">{category}</span>
+    // </motion.div>
+
+    <motion.div
+      className="title-container"
+      initial={false}
+      animate={{ x, y }}
+      transition={isSelected ? openSpring : closeSpring}
+      transformTemplate={scaleTranslate}
+      style={{ originX: 0, originY: 0 }}
+    >
       <span className="tag">{category}</span>
     </motion.div>
   );

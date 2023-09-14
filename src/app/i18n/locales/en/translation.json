@@ -12,5 +12,14 @@
   "work": {
     "title": "Projects",
     "tag": "Project"
+  },
+  "contact": {
+    "title": "Let's start a project together. ",
+    "nom": "Name",
+    "email": "Email",
+    "message": "Your message",
+    "text": "I have a new project, can we discuss about it ? ",
+    "envoyer": "Send",
+    "envoye": "Sent!"
   }
 }

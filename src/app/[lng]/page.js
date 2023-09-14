@@ -213,10 +213,11 @@ export default function Home({ params: { lng } }) {
         <Lottie className="working" animationData={workingAnimation} />
       </Card>
 
-      <CardExpandable
+      {/* <CardExpandable
         id="esurvey"
         key={"esurvey"}
         className={"esurvey"}
+        website={"esurvey"}
         logo={"esurvey"}
         tag={t("work.tag")}
         isSelected={cardSelected === "esurvey"}
@@ -231,7 +232,7 @@ export default function Home({ params: { lng } }) {
           <br />
           {t("about.text3")}
         </div>
-      </CardExpandable>
+      </CardExpandable> */}
 
       {cardData.map((card) => {
         return (
@@ -260,7 +261,7 @@ export default function Home({ params: { lng } }) {
       })}
 
       <Card className={"contact"}>
-        <Contact />
+        <Contact lng={lng} />
       </Card>
     </motion.div>
   );

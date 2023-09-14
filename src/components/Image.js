@@ -11,17 +11,11 @@ export const Img = ({ id, isSelected, backgroundColor, website, logo }) => {
 
   return (
     <motion.div
-      layout
       className={`card-image-container ${isSelected ? "open" : ""}`}
       style={{ backgroundColor, originX: 0, originY: 0 }}
     >
       {isSelected ? (
-        <Image
-          className="card-image"
-          fill
-          src={`/public/images/${id}.png`}
-          alt=""
-        />
+        <img className="card-image" fill src={`/images/${id}.png`} alt="" />
       ) : (
         <div>{logo !== "" ? "logo" : website}</div>
       )}

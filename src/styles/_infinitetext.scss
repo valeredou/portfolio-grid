@@ -1,0 +1,17 @@
+.infinite-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  .text {
+    line-height: 32px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $black;
+    letter-spacing: -0.05em;
+    padding-right: 0.25em;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    user-select: none;
+    /* will-change: transform; */
+  }
+}

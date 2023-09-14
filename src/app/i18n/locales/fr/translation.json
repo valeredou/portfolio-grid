@@ -13,5 +13,14 @@
     "title": "Projets",
     "tag": "Projet",
     "intro": "Voici une sélection de 3 projets sur lesquels j'ai été amené à travailler "
+  },
+  "contact": {
+    "title": "Commençons un projet ensemble. ",
+    "nom": "Nom",
+    "email": "Email",
+    "message": "Votre message",
+    "text": "J'ai un projet, pouvons nous prendre contact pour en discuter ?",
+    "envoyer": "Envoyer",
+    "envoye": "Envoyé ! "
   }
 }
