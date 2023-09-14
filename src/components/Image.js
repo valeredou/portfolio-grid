@@ -15,7 +15,7 @@ export const Img = ({ id, isSelected, backgroundColor, website, logo }) => {
       style={{ backgroundColor, originX: 0, originY: 0 }}
     >
       {isSelected ? (
-        <img className="card-image" fill src={`/images/${id}.png`} alt="" />
+        <img className="card-image" src={`/images/${id}.png`} alt="" />
       ) : (
         <div>{logo !== "" ? "logo" : website}</div>
       )}

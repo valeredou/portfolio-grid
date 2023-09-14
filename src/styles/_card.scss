@@ -459,9 +459,9 @@
 *************************************************************************/
 
 .card.work {
+  background-color: $color-primary-lighter;
+
   grid-area: 5 / 4 / 7 / 5;
-  background-image: url("/images/gradient5.jpg");
-  background-size: cover;
 }
 
 /*************************************************************************  
@@ -471,6 +471,9 @@
 *************************************************************************/
 
 .card.esurvey {
+  padding: 0px;
+  background-color: $color-background;
+
   grid-area: 5 / 2 / 7 / 4;
 }
 
@@ -481,9 +484,9 @@
 *************************************************************************/
 
 .card.differences {
+  padding: 0px;
+  background-color: $color-background;
   grid-area: 5 / 1 / 6 / 2;
-  background-image: url("/images/gradient3.jpg");
-  background-size: cover;
 }
 
 /*************************************************************************  
@@ -493,9 +496,9 @@
 *************************************************************************/
 
 .card.portfolio {
+  padding: 0px;
+  background-color: $color-background;
   grid-area: 6 / 1 / 7 / 2;
-  background-image: url("/images/gradient3.jpg");
-  background-size: cover;
 }
 
 /*************************************************************************  

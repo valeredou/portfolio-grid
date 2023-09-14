@@ -3,6 +3,7 @@
 //Libraries
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
+  AnimatePresence,
   motion,
   useMotionValue,
   useMotionValueEvent,
@@ -21,14 +22,18 @@ import Card from "@/components/Card";
 import { useTranslation } from "../i18n/client";
 import { cardData } from "@/Cardlist";
 import CardExpandable from "@/components/CardExpandable";
+import CardToExtend from "@/components/CardToExtend";
 import CardHero from "@/components/CardHero";
 import Link from "next/link";
 import ReactLogo from "@/components/ReactLogo";
 import { Contact } from "@/components/Contact";
+import { CardExtended } from "@/components/CardExtended";
 
 export default function Home({ params: { lng } }) {
   const { t } = useTranslation(lng);
   const [cardSelected, setCardSelected] = useState(null);
+
+  console.log(cardSelected);
 
   return (
     <motion.div layout className={`wrapper ${isMobile && "mobile"}`}>
@@ -234,29 +239,48 @@ export default function Home({ params: { lng } }) {
         </div>
       </CardExpandable> */}
 
+      <AnimatePresence>
+        {cardSelected !== null && (
+          <CardExtended
+            id={cardSelected}
+            isSelected={true}
+            key="item"
+            setCardSelected={setCardSelected}
+          />
+        )}
+      </AnimatePresence>
+
       {cardData.map((card) => {
         return (
-          <CardExpandable
-            {...card}
-            expandable
-            category={t("work.tag")}
+          <CardToExtend
             key={card.id}
             isSelected={cardSelected === card.id}
             setCardSelected={setCardSelected}
             className={card.id}
-            website={card.website}
-            logo={""}
-          >
-            <div className="text">
-              {t("about.text1")}
-              <br />
-              <br />
-              {t("about.text2")}
-              <br />
-              <br />
-              {t("about.text3")}
-            </div>
-          </CardExpandable>
+            category={t("work.tag")}
+            {...card}
+          />
+          // <CardExpandable
+          //   {...card}
+          //   expandable
+          //   category={t("work.tag")}
+          //   key={card.id}
+          //   isSelected={cardSelected === card.id}
+          //   setCardSelected={setCardSelected}
+          //   className={card.id}
+          //   website={card.website}
+          //   logo={""}
+          // >
+          //   <div className="text">
+          //     {t("about.text1")}
+          //     <br />
+          //     <br />
+          //     {t("about.text2")}
+          //     <br />
+          //     <br />
+          //     {t("about.text3")}
+          //   </div>
+          // </CardExpandable>
         );
       })}
 
