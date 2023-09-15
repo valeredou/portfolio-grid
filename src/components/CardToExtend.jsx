@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { UilAngleRightB } from "@iconscout/react-unicons";
 
 const CardToExtend = ({
   id,
@@ -14,20 +15,35 @@ const CardToExtend = ({
     <li className={`card ${className ? className : ""}`}>
       <div className="card-content-container">
         <motion.div className="card-content" layoutId={`card-container-${id}`}>
-          <motion.div
-            className="card-image-container"
-            layoutId={`card-image-container-${id}`}
-          >
-            <img className="card-image" src={`images/${id}.jpg`} alt="" />
-          </motion.div>
+          {id === "esurvey" && (
+            <motion.div
+              className="card-image-container"
+              layoutId={`card-image-container-${id}`}
+            >
+              <img
+                className="card-image"
+                src={`images/logo-esurvey-v2.png`}
+                alt=""
+              />
+            </motion.div>
+          )}
           <motion.div
             className="title-container"
-            layoutId={`title-container-${id}`}
+            layout
+            // layoutId={`title-container-${id}`}
           >
-            <span className="category">{category}</span>
-            <h2>{title}</h2>
+            <span className="tag">{category}</span>
+
+            {id !== "esurvey" && (
+              <motion.h2 className="title">{title}</motion.h2>
+            )}
           </motion.div>
         </motion.div>
+        {!isSelected && (
+          <div className="open-button" onClick={() => setCardSelected(id)}>
+            <UilAngleRightB className="chevron" />
+          </div>
+        )}
       </div>
       {isSelected === false && (
         <div

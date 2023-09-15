@@ -341,7 +341,7 @@
 *************************************************************************/
 .card.about {
   grid-area: 3/1/5/2;
-  background-image: url("/images/gradient3.jpg");
+  background-image: url("/images/gradient6.jpg");
   background-size: cover;
 }
 
@@ -441,8 +441,13 @@
 
 *************************************************************************/
 .card.work {
-  background-color: #457b9d;
+  background-image: url("/images/gradient6.jpg");
+  background-size: cover;
   grid-area: 5/4/7/5;
+}
+.card.work .working {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /*************************************************************************  
@@ -655,11 +660,13 @@
   pointer-events: auto;
   position: relative;
   border-radius: 20px;
-  background: #1c1c1e;
+  background: #ffffff;
+  color: #121517;
   overflow: hidden;
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  padding-top: 35px;
 }
 
 .open .card-content {
@@ -677,12 +684,19 @@
 }
 
 .card-image-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  height: 420px;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-image-container a {
+  display: flex;
+  justify-content: center;
+}
+.card-image-container img {
+  border-radius: 15px;
+  max-width: 90%;
 }
 
 .open .card-image-container,
@@ -690,25 +704,32 @@
   z-index: 1;
 }
 
+.open .title-container h2 {
+  margin-top: 35px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #121517;
+}
+
 .title-container {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  max-width: 300px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.open .title-container {
-  top: 30px;
-  left: 30px;
-}
-
-h2 {
-  color: #fff;
+h2.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #121517;
   margin: 8px 0;
 }
 
 .category {
-  color: #fff;
+  color: #121517;
   font-size: 14px;
   text-transform: uppercase;
 }
@@ -736,9 +757,79 @@ h2 {
 }
 
 .content-container {
-  padding: 460px 35px 35px 35px;
+  padding: 35px 35px 35px 35px;
   max-width: 700px;
   width: 90vw;
+}
+
+.open .content-container .presentation .text,
+.open .content-container .tech .text,
+.open .content-container .techstack .text {
+  padding: 30px 10px;
+}
+.open .content-container h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #1d3557;
+}
+.open .content-container .tags-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.open .content-container .tags-container .tag {
+  background: #7081dd;
+  color: #fafafa;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.open .content-container .tags-container .tag.back {
+  background-color: #121517;
+}
+
+.open-button {
+  background: white;
+  padding: 0px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.open-button .chevron {
+  color: black;
+  width: 90%;
+  height: 90%;
+}
+
+.close-button {
+  z-index: 20;
+  background: white;
+  padding: 0px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.close-button .cross {
+  color: black;
+  width: 90%;
+  height: 90%;
 }
 
 @layer base {

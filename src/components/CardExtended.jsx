@@ -2,27 +2,13 @@ import React, { useRef } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import { LoremIpsum } from "react-lorem-ipsum";
 import { cardData } from "@/Cardlist";
-import { useWheelScroll } from "@/utils/use-wheel-scroll";
-import { useScrollConstraints } from "@/utils/use-scroll-constraints";
+import { UilTimes } from "@iconscout/react-unicons";
+import { Interweave } from "interweave";
 
-export function CardExtended({ id, setCardSelected, isSelected }) {
-  const { category, title } = cardData.find((item) => item.id === id);
-
-  //   // Distance in pixels a user has to scroll a card down before we recognise
-  //   // a swipe-to dismiss action.
-  //   const dismissDistance = 150;
-
-  //   function checkSwipeToDismiss() {
-  //     y.get() > dismissDistance && setCardSelected(null);
-  //   }
-  //   // We'll use the opened card element to calculate the scroll constraints
-  //   const cardRef = useRef(null);
-  //   const constraints = useScrollConstraints(cardRef, isSelected);
-
-  //   // When this card is selected, attach a wheel event listener
-  //   const containerRef = useRef(null);
-  //   const y = useMotionValue(0);
-  //   useWheelScroll(containerRef, y, constraints, checkSwipeToDismiss, isSelected);
+export function CardExtended({ id, setCardSelected, isSelected, t }) {
+  const { category, title, website, tags } = cardData.find(
+    (item) => item.id === id
+  );
 
   return (
     <>
@@ -44,21 +30,60 @@ export function CardExtended({ id, setCardSelected, isSelected }) {
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
           >
-            <img className="card-image" src={`images/${id}.jpg`} alt="" />
+            <a href={website} alt={title} target="__blank">
+              <img className="card-image" src={`images/${id}.png`} alt="" />
+            </a>
           </motion.div>
           <motion.div
             className="title-container"
             layoutId={`title-container-${id}`}
           >
-            <span className="category">{category}</span>
             <h2>{title}</h2>
           </motion.div>
+          {isSelected && (
+            <div className="close-button" onClick={() => setCardSelected(null)}>
+              <UilTimes className="cross" />
+            </div>
+          )}
           <motion.div className="content-container" animate>
-            <LoremIpsum
+            <div className="presentation">
+              <h3>{t("work.presentation")}</h3>
+              <div className="text">
+                <Interweave content={t(id + ".presentation")} />
+              </div>
+            </div>
+
+            <div className="tech">
+              <h3>{t("work.tech")}</h3>
+              <div className="text">
+                <Interweave content={t(id + ".technique")} />
+              </div>
+            </div>
+
+            <div className="techstack">
+              <h3>{t("work.techno_utilise")}</h3>
+
+              <div className="tags-container">
+                {tags.map((tag) => {
+                  return (
+                    <div
+                      key={tag}
+                      className={`tag ${
+                        tag === "Laravel" || tag === "Couchbase" ? "back" : ""
+                      } `}
+                    >
+                      {tag}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* <LoremIpsum
               p={10}
               avgWordsPerSentence={6}
               avgSentencesPerParagraph={4}
-            />
+            /> */}
           </motion.div>
         </motion.div>
       </div>

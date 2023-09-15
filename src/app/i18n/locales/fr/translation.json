@@ -11,8 +11,25 @@
   "skills": "Compétences",
   "work": {
     "title": "Projets",
-    "tag": "Projet",
-    "intro": "Voici une sélection de 3 projets sur lesquels j'ai été amené à travailler "
+    "tag": "Projets",
+    "intro1": "Au long de ma carrière, j'ai été amené à travailler sur différents projets, certains publics et certains privés.",
+    "intro2": "Voici une sélection de 3 projets publics que j'ai développé dernièrement.",
+
+    "presentation": "Présentation",
+    "tech": "Technique",
+    "techno_utilise": "Technologies utilisées"
+  },
+  "esurvey": {
+    "presentation": "Le site présenté ici est e-survey. Il s'agit d'une plateforme (disponible dans plusieurs langues) de mise en ligne d'enquêtes automatisée. Avec un site vitrine élégant, un module de création intuitif et une gestion automatisée des réponses, e-survey rend le processus rapide et accessible.<br /> Le but principal de la plateforme est de simplifier la création d'enquêtes en ligne par le biais d'une interface épurée, conçue en étroite collaboration avec des professionnels du secteur.",
+    "technique": "Sur le projet depuis les premiers croquis, j'ai eu la chance d'avoir une grande liberté sur les choix technologiques à effectuer. Ma mission a été la gestion de la partie front end de la plateforme, que ce soit le module de création de questionnaires ou de réponse. <br />Le choix de react a été assez rapide et sans appel, la manière de penser et de s'organiser par composants collait parfaitement au projet.<br /> Par la suite d'autres défis sont apparus, il a fallu s'équiper d'une gestion plus poussée d'états, avec Mobx notamment. <br />Sur la fin du projet, je suis également intervenu sur la partie back end pour optimiser les performances de certaines actions couteuses en ressources.  "
+  },
+  "differences": {
+    "presentation": "",
+    "technique": ""
+  },
+  "portfolio": {
+    "presentation": "",
+    "technique": ""
   },
   "contact": {
     "title": "Commençons un projet ensemble. ",

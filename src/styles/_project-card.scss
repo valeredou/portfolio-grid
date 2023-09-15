@@ -25,11 +25,13 @@
   pointer-events: auto;
   position: relative;
   border-radius: 20px;
-  background: #1c1c1e;
+  background: #ffffff;
+  color: $black;
   overflow: hidden;
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  padding-top: 35px;
 }
 
 .open .card-content {
@@ -47,12 +49,21 @@
 }
 
 .card-image-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  height: 420px;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    border-radius: 15px;
+    max-width: 90%;
+  }
 }
 
 .open .card-image-container,
@@ -60,25 +71,35 @@
   z-index: 1;
 }
 
+.open .title-container h2 {
+  margin-top: 35px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $black;
+}
+
 .title-container {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  max-width: 300px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .open .title-container {
-  top: 30px;
-  left: 30px;
 }
 
-h2 {
-  color: #fff;
+h2.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $black;
   margin: 8px 0;
 }
 
 .category {
-  color: #fff;
+  color: $black;
   font-size: 14px;
   text-transform: uppercase;
 }
@@ -107,7 +128,86 @@ h2 {
 }
 
 .content-container {
-  padding: 460px 35px 35px 35px;
+  padding: 35px 35px 35px 35px;
   max-width: 700px;
   width: 90vw;
+}
+
+.open .content-container {
+  .presentation,
+  .tech,
+  .techstack {
+    .text {
+      padding: 30px 10px;
+    }
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color-primary;
+  }
+
+  .tags-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .tag {
+      background: $esurvey;
+      color: $white;
+      border-radius: 10px;
+      padding: 5px 10px;
+
+      &.back {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+.open-button {
+  background: white;
+  padding: 0px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .chevron {
+    color: black;
+    width: 90%;
+    height: 90%;
+  }
+}
+
+.close-button {
+  z-index: 20;
+  background: white;
+  padding: 0px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .cross {
+    color: black;
+    width: 90%;
+    height: 90%;
+  }
 }

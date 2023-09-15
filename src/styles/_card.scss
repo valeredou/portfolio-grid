@@ -340,8 +340,10 @@
 
 .card.about {
   grid-area: 3 / 1 / 5 / 2;
-  background-image: url("/images/gradient3.jpg");
+  background-image: url("/images/gradient6.jpg");
   background-size: cover;
+
+  // background: $orange;
 }
 
 /*************************************************************************  
@@ -459,9 +461,17 @@
 *************************************************************************/
 
 .card.work {
-  background-color: $color-primary-lighter;
+  //background-color: $color-primary-lighter;
+  //background-color: $esurvey;
+  background-image: url("/images/gradient6.jpg");
+  background-size: cover;
 
   grid-area: 5 / 4 / 7 / 5;
+
+  .working {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }
 
 /*************************************************************************  

@@ -214,7 +214,10 @@ export default function Home({ params: { lng } }) {
           ******************************************************/}
 
       <Card className={"work"} title={t("work.title")}>
-        <div className="text">{t("work.intro")}</div>
+        <div className="text" style={{ marginBottom: "10px" }}>
+          {t("work.intro1")}
+        </div>
+        <div className="text">{t("work.intro2")}</div>
         <Lottie className="working" animationData={workingAnimation} />
       </Card>
 
@@ -246,6 +249,7 @@ export default function Home({ params: { lng } }) {
             isSelected={true}
             key="item"
             setCardSelected={setCardSelected}
+            t={t}
           />
         )}
       </AnimatePresence>
@@ -254,11 +258,11 @@ export default function Home({ params: { lng } }) {
         return (
           <CardToExtend
             key={card.id}
+            {...card}
             isSelected={cardSelected === card.id}
             setCardSelected={setCardSelected}
             className={card.id}
             category={t("work.tag")}
-            {...card}
           />
           // <CardExpandable
           //   {...card}

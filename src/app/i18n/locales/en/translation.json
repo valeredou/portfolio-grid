@@ -11,7 +11,25 @@
   "skills": "Skills",
   "work": {
     "title": "Projects",
-    "tag": "Project"
+    "tag": "Project",
+    "intro1": "Throughout my career, I've worked on a variety of projects, some public and some private.",
+    "intro2": "Here's a selection of 3 public projects I've been developing lately",
+
+    "presentation": "Introduction",
+    "tech": "Technology",
+    "techno_utilise": "Tech stack"
+  },
+  "esurvey": {
+    "presentation": "The website presented here is e-survey. It is a platform (available in multiple languages) for automated online survey deployment. With an elegant showcase site, an intuitive creation module, and automated response management, e-survey makes the process fast and accessible.<br /> The main goal of the platform is to simplify online survey creation through a streamlined interface, designed in close collaboration with industry professionals.",
+    "technique": "On the project from the initial sketches, I had the opportunity to have a great deal of freedom in making technological choices. My mission was to manage the front-end part of the platform, whether it was the questionnaire or response creation module.<br /> The choice of React was made quickly and unequivocally, as its component-based thinking and organization aligned perfectly with the project.<br /> Subsequently, other challenges arose, requiring us to implement more advanced state management, including Mobx.<br /> Towards the end of the project, I also worked on the back-end to optimize the performance of certain resource-intensive actions."
+  },
+  "differences": {
+    "presentation": "",
+    "technique": ""
+  },
+  "portfolio": {
+    "presentation": "",
+    "technique": ""
   },
   "contact": {
     "title": "Let's start a project together. ",
