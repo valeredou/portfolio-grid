@@ -1,5 +1,8 @@
+"use client";
+
 import { AnimatePresence, motion, useMotionValue } from "framer-motion";
 import { useRef } from "react";
+import { isMobile } from "react-device-detect";
 
 const Card = ({
   className,
@@ -28,8 +31,8 @@ const Card = ({
 
   return (
     <motion.div
-      initial={initialVariants[animation]}
-      whileInView={inViewVariants[animation]}
+      initial={!isMobile ? initialVariants[animation] : {}}
+      whileInView={!isMobile ? inViewVariants[animation] : {}}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: delay }}
       className={`card ${className ? className : ""}`}

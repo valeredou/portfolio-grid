@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { UilAngleRightB } from "@iconscout/react-unicons";
+import { isMobile } from "react-device-detect";
 
 const CardToExtend = ({
   id,
@@ -29,8 +30,8 @@ const CardToExtend = ({
 
   return (
     <motion.li
-      initial={initialVariants[animation]}
-      whileInView={inViewVariants[animation]}
+      initial={!isMobile ? initialVariants[animation] : {}}
+      whileInView={!isMobile ? inViewVariants[animation] : {}}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: delay }}
       whileTap={{ scale: 0.8, transition: { duration: 0.2 } }}
