@@ -661,7 +661,7 @@ li.card {
 }
 @media (max-width: 599px) {
   .card-content-container.open::-webkit-scrollbar {
-    display: initial;
+    display: block;
     /* for Chrome, Safari, and Opera */
   }
 }
