@@ -45,7 +45,7 @@ export default function Home({ params: { lng } }) {
           Hello card 
           
           ******************************************************/}
-      <Card className="hello" id="hello">
+      <Card className="hello" id="hello" animation="right">
         <motion.h1
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -65,7 +65,7 @@ export default function Home({ params: { lng } }) {
       </Card>
 
       {/* Links card  */}
-      <Card className="links" id="links">
+      <Card className="links" id="links" animation="right" delay={0.2}>
         <motion.div
           className="links-container"
           initial={{ y: -20, opacity: 0 }}
@@ -124,7 +124,12 @@ export default function Home({ params: { lng } }) {
           
           ******************************************************/}
 
-      <Card className={"about"} title={t("about.title")}>
+      <Card
+        className={"about"}
+        title={t("about.title")}
+        animation="left"
+        delay={0.2}
+      >
         <div className="text">
           {t("about.text1")}
           <br />
@@ -136,11 +141,11 @@ export default function Home({ params: { lng } }) {
         </div>
       </Card>
 
-      <Card className={"react"} tag={t("skills")}>
+      <Card className={"react"} tag={t("skills")} animation="top" delay={0.25}>
         <ReactLogo />
       </Card>
 
-      <Card className={"htmlcssjs"} tag={t("skills")}>
+      <Card className={"htmlcssjs"} tag={t("skills")} animation="bottom">
         <div className="language">
           <Image
             alt="html"
@@ -177,7 +182,7 @@ export default function Home({ params: { lng } }) {
         </div>
       </Card>
 
-      <Card className={"php"} tag={t("skills")}>
+      <Card className={"php"} tag={t("skills")} animation="right" delay={0.27}>
         <Image
           alt="php"
           className="php"
@@ -188,7 +193,7 @@ export default function Home({ params: { lng } }) {
         />
       </Card>
 
-      <Card className={"sql"} tag={t("skills")}>
+      <Card className={"sql"} tag={t("skills")} animation="right" delay={0.1}>
         <Image
           alt="sql"
           title="sql"
@@ -213,34 +218,13 @@ export default function Home({ params: { lng } }) {
           
           ******************************************************/}
 
-      <Card className={"work"} title={t("work.title")}>
+      <Card className={"work"} title={t("work.title")} animation="right">
         <div className="text" style={{ marginBottom: "10px" }}>
           {t("work.intro1")}
         </div>
         <div className="text">{t("work.intro2")}</div>
         <Lottie className="working" animationData={workingAnimation} />
       </Card>
-
-      {/* <CardExpandable
-        id="esurvey"
-        key={"esurvey"}
-        className={"esurvey"}
-        website={"esurvey"}
-        logo={"esurvey"}
-        tag={t("work.tag")}
-        isSelected={cardSelected === "esurvey"}
-        setCardSelected={setCardSelected}
-      >
-        <div className="text">
-          {t("about.text1")}
-          <br />
-          <br />
-          {t("about.text2")}
-          <br />
-          <br />
-          {t("about.text3")}
-        </div>
-      </CardExpandable> */}
 
       <AnimatePresence>
         {cardSelected !== null && (
@@ -264,31 +248,16 @@ export default function Home({ params: { lng } }) {
             className={card.id}
             category={t("work.tag")}
           />
-          // <CardExpandable
-          //   {...card}
-          //   expandable
-          //   category={t("work.tag")}
-          //   key={card.id}
-          //   isSelected={cardSelected === card.id}
-          //   setCardSelected={setCardSelected}
-          //   className={card.id}
-          //   website={card.website}
-          //   logo={""}
-          // >
-          //   <div className="text">
-          //     {t("about.text1")}
-          //     <br />
-          //     <br />
-          //     {t("about.text2")}
-          //     <br />
-          //     <br />
-          //     {t("about.text3")}
-          //   </div>
-          // </CardExpandable>
         );
       })}
 
-      <Card className={"contact"}>
+      {/******************************************************
+          
+          CONTACT 
+          
+          ******************************************************/}
+
+      <Card className={"contact"} animation="bottom">
         <Contact lng={lng} />
       </Card>
     </motion.div>

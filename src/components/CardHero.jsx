@@ -34,7 +34,7 @@ const CardHero = ({ t }) => {
     );
   });
   return (
-    <Card className="hero" id="VD">
+    <Card className="hero" id="VD" animation="left">
       <div ref={title} id="title" className="title">
         {name.split("").map((letter, index) => {
           return (

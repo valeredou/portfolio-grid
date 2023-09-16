@@ -17,6 +17,8 @@ export const cardData = [
       "Laravel",
       "Couchbase",
     ],
+    animation: "top",
+    delay: 0.1,
   },
   // 3Differences
   {
@@ -33,6 +35,8 @@ export const cardData = [
       "Framer Motion",
       "Valtio",
     ],
+    animation: "left",
+    delay: 0.2,
   },
   //portfolio
   {
@@ -49,5 +53,7 @@ export const cardData = [
       "Framer Motion",
       "GSAP",
     ],
+    animation: "left",
+    delay: 0.25,
   },
 ];
