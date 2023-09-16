@@ -12,7 +12,7 @@ export function CardExtended({ id, setCardSelected, isSelected, t }) {
 
   return (
     <>
-      {/* <motion.div
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -23,7 +23,7 @@ export function CardExtended({ id, setCardSelected, isSelected, t }) {
           //document.body.style.overflow = "auto";
           setCardSelected(null);
         }}
-      ></motion.div> */}
+      ></motion.div>
       <div className="card-content-container open">
         <motion.div className="card-content" layoutId={`card-container-${id}`}>
           <motion.div

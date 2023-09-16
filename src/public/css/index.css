@@ -654,6 +654,7 @@ li.card {
   z-index: 10;
   overflow: auto;
   padding: 40px 0;
+  -webkit-overflow-scrolling: touch;
 }
 .card-content-container.open::-webkit-scrollbar {
   display: none;
@@ -683,6 +684,7 @@ li.card {
   height: auto;
   max-width: 700px;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .card-open-link {

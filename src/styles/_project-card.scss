@@ -19,6 +19,8 @@ li.card {
   overflow: auto;
   padding: 40px 0;
 
+  -webkit-overflow-scrolling: touch;
+
   &::-webkit-scrollbar {
     display: none;
     /* for Chrome, Safari, and Opera */
@@ -49,6 +51,7 @@ li.card {
   height: auto;
   max-width: 700px;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .card-open-link {
