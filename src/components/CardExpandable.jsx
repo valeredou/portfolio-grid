@@ -2,7 +2,6 @@ import { useScroll, motion, useMotionValue } from "framer-motion";
 import Overlay from "./Overlay";
 import { ContentPlaceholder } from "./ContentPlaceholder";
 import { useScrollConstraints } from "@/utils/use-scroll-constraints";
-import { useWheelScroll } from "@/utils/use-wheel-scroll";
 import { Image, Img } from "./Image";
 import { useRef } from "react";
 import { Title } from "./Title";
@@ -50,7 +49,7 @@ const CardExpandable = ({
 
   // When this card is selected, attach a wheel event listener
   const containerRef = useRef(null);
-  useWheelScroll(containerRef, y, constraints, checkSwipeToDismiss, isSelected);
+  // useWheelScroll(containerRef, y, constraints, checkSwipeToDismiss, isSelected);
 
   return (
     <motion.div

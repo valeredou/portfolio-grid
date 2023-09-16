@@ -24,12 +24,12 @@
     "technique": "On the project from the initial sketches, I had the opportunity to have a great deal of freedom in making technological choices. My mission was to manage the front-end part of the platform, whether it was the questionnaire or response creation module.<br /> The choice of React was made quickly and unequivocally, as its component-based thinking and organization aligned perfectly with the project.<br /> Subsequently, other challenges arose, requiring us to implement more advanced state management, including Mobx.<br /> Towards the end of the project, I also worked on the back-end to optimize the performance of certain resource-intensive actions."
   },
   "differences": {
-    "presentation": "",
-    "technique": ""
+    "presentation": "The website presented here is 3Differences. It's a personal creation. Who has never played the game of 7 differences on a piece of paper? <br /> Very well, simple and effective, but what if we added a dimension? That's where the idea came to me to develop a 3D spot the difference game in the form of a website. <br /><br /> The game is simple, a 3D scene with an object with some missing elements, and in the top right corner, another scene with the reference object.",
+    "technique": "To implement this concept, I had to turn to Three.js, a WebGL library that makes 3D access in the browser easier. To combine the use of React and Three.js, I used the react-three-fiber library, which encapsulates Three.js functionality in the form of React components."
   },
   "portfolio": {
-    "presentation": "",
-    "technique": ""
+    "presentation": "The website presented here is my portfolio. It's a personal creation. The idea is to create a clean and minimalistic site containing various information about myself and my projects. I drew inspiration from Apple's product pages, using cards to display the information.",
+    "technique": "Simplicity was the key, but a touch of visual appeal was still necessary. That's why the portfolio consists of two sites, the first one being the container, with a floating MacBook displaying the actual content (an iPhone for mobile devices). It was important to me to incorporate 3D into my website because, in my view, this technology offers new possibilities for expression, and the react-three-fiber library was a great help in achieving that."
   },
   "contact": {
     "title": "Let's start a project together. ",

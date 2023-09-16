@@ -63,6 +63,11 @@ const InfiniteText = ({ lng }) => {
   const isScrolling = useRef(false);
   const constraintsRef = useRef(null);
 
+  var innerWidth = 1200;
+  if (typeof window !== "undefined") {
+    innerWidth = window.innerWidth;
+  }
+
   const { t } = useTranslation(lng);
   const _ = {
     content: t("contact.title"),
@@ -73,7 +78,7 @@ const InfiniteText = ({ lng }) => {
   };
 
   const x = useRef(0);
-  const w = useRef(window.innerWidth).current;
+  const w = useRef(innerWidth).current;
   const speed = useSpring(_.speed, {
     damping: 40,
     stiffness: 200,
@@ -98,6 +103,7 @@ const InfiniteText = ({ lng }) => {
   return (
     <>
       <motion.div className="infinite-text" ref={marquee} style={{ skewX }}>
+        <Text content={_.content} speed={speed} />
         <Text content={_.content} speed={speed} />
         <Text content={_.content} speed={speed} />
         <Text content={_.content} speed={speed} />

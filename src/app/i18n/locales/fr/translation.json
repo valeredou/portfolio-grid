@@ -4,7 +4,7 @@
   "intro": "Je suis un développeur freelance spécialisé dans le développement web front-end depuis 5 ans. Passionné par la création de belles interfaces, l'expérience utilisateur (UX) et les sites rapides, j'ai acquis une expertise solide dans le domaine.",
   "about": {
     "title": "À propos",
-    "text1": "Basé à Lille, je compte plusieurs années de développement en entreprise, ce qui m’a permis d’acquérir une vision globale du monde du web.     ",
+    "text1": "Basé à Lille, j'ai accumulé plusieurs années d'expérience en entreprise, ce qui m'a permis d'acquérir une vision globale du monde du web.",
     "text2": "Mon objectif principal est de fournir des expériences utilisateur agréables en créant des interfaces esthétiques et intuitives. Je crois fermement que le design et la fonctionnalité vont de pair pour offrir des sites web de qualité. ",
     "text3": "N'hésitez pas à me contacter. Je serais ravi de discuter de votre projet et de contribuer à son succès."
   },
@@ -12,7 +12,7 @@
   "work": {
     "title": "Projets",
     "tag": "Projets",
-    "intro1": "Au long de ma carrière, j'ai été amené à travailler sur différents projets, certains publics et certains privés.",
+    "intro1": "Au long de ma carrière, j'ai été amené à travailler sur différents projets, certains publics et d'autres privés.",
     "intro2": "Voici une sélection de 3 projets publics que j'ai développé dernièrement.",
 
     "presentation": "Présentation",
@@ -24,12 +24,12 @@
     "technique": "Sur le projet depuis les premiers croquis, j'ai eu la chance d'avoir une grande liberté sur les choix technologiques à effectuer. Ma mission a été la gestion de la partie front end de la plateforme, que ce soit le module de création de questionnaires ou de réponse. <br />Le choix de react a été assez rapide et sans appel, la manière de penser et de s'organiser par composants collait parfaitement au projet.<br /> Par la suite d'autres défis sont apparus, il a fallu s'équiper d'une gestion plus poussée d'états, avec Mobx notamment. <br />Sur la fin du projet, je suis également intervenu sur la partie back end pour optimiser les performances de certaines actions couteuses en ressources.  "
   },
   "differences": {
-    "presentation": "",
-    "technique": ""
+    "presentation": "Le site présenté ici est 3Differences. Il s'agit d'une création personnelle. Qui n'a jamais joué au jeu des 7 différences sur un bout de papier ? <br /> Très bien, simple et efficace mais qu'en serait-il si on ajoutait une dimension ? C'est de là où m'est venue l'idée de développer un jeu de différences en 3D sous forme de site web. <br /><br /> Le jeu est simple, une scène 3D avec un objet dont des éléments sont manquants, et en haut à droite, une autre scène avec l'objet de référence.  ",
+    "technique": "Pour mettre en place ce concept, j'ai du me tourner du côté de Three.js, une librairie webgl facilitant l'accès à la 3D dans le navigateur. Pour mixer l'utilisation de react et de Three.js, j'ai utilisé la bibliothèque react-three-fiber, qui encapsule les fonctionnalités de Three.js sous la forme de composants react. "
   },
   "portfolio": {
-    "presentation": "",
-    "technique": ""
+    "presentation": "Le site présenté ici est mon portfolio. Il s'agit d'une création personnelle. L'idée est de produire un site sobre, contenant les différentes informations me présentant moi et mes projets. J'ai eu pour inspiration les pages de produit de chez Apple, se servant de cartes pour afficher les informations.",
+    "technique": "La simplicité était le maître mot, mais il fallait tout de même un peu de visuel. C'est pourquoi, le portfolio se compose de 2 sites, le premier étant le conteneur, avec un Macbook flottant affichant le vrai contenu (un iPhone pour les appareils mobiles). Il me tenait à coeur d'incorporer de la 3D sur mon site, car pour moi cette technologie offre de nouvelles possibilités d'expression, la bibliothèque react-three-fiber m'a été d'une grande aide. "
   },
   "contact": {
     "title": "Commençons un projet ensemble. ",
