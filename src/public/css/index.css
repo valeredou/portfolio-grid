@@ -656,16 +656,6 @@ li.card {
   padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
-.card-content-container.open::-webkit-scrollbar {
-  display: none;
-  /* for Chrome, Safari, and Opera */
-}
-@media (max-width: 599px) {
-  .card-content-container.open::-webkit-scrollbar {
-    display: block;
-    /* for Chrome, Safari, and Opera */
-  }
-}
 
 .card-content {
   pointer-events: auto;
