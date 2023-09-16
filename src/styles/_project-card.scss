@@ -19,6 +19,13 @@
     display: none;
     /* for Chrome, Safari, and Opera */
   }
+
+  @include for-phone-only() {
+    &::-webkit-scrollbar {
+      display: initial;
+      /* for Chrome, Safari, and Opera */
+    }
+  }
 }
 
 .card-content {
