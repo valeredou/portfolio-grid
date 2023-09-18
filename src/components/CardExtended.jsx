@@ -44,7 +44,15 @@ export function CardExtended({ id, setCardSelected, isSelected, t }) {
             <h2>{title}</h2>
           </motion.div>
           {isSelected && (
-            <div className="close-button" onClick={() => setCardSelected(null)}>
+            <div
+              className="close-button"
+              onClick={() => {
+                if (isMobile) {
+                  document.body.style.overflow = "auto";
+                }
+                setCardSelected(null);
+              }}
+            >
               <UilTimes className="cross" />
             </div>
           )}
