@@ -43,6 +43,11 @@ li.card {
   height: 100%;
   margin: 0 auto;
   padding-top: 35px;
+
+  @include for-phone-only() {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 .open .card-content {

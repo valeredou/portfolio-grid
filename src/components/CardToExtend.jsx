@@ -76,6 +76,9 @@ const CardToExtend = ({
         <div
           className="card-open-link"
           onClick={() => {
+            if (isMobile) {
+              document.body.style.overflow = "hidden";
+            }
             //document.body.style.overflow = "hidden";
             setCardSelected(id);
           }}

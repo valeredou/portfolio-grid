@@ -4,6 +4,7 @@ import { LoremIpsum } from "react-lorem-ipsum";
 import { cardData } from "@/Cardlist";
 import { UilTimes } from "@iconscout/react-unicons";
 import { Interweave } from "interweave";
+import { isMobile } from "react-device-detect";
 
 export function CardExtended({ id, setCardSelected, isSelected, t }) {
   const { category, title, website, tags } = cardData.find(
@@ -20,7 +21,9 @@ export function CardExtended({ id, setCardSelected, isSelected, t }) {
         style={{ pointerEvents: "auto" }}
         className="overlay"
         onClick={() => {
-          //document.body.style.overflow = "auto";
+          if (isMobile) {
+            document.body.style.overflow = "auto";
+          }
           setCardSelected(null);
         }}
       ></motion.div>
