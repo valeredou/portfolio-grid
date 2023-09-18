@@ -26,12 +26,10 @@ li.card {
   //   /* for Chrome, Safari, and Opera */
   // }
 
-  // @include for-phone-only() {
-  //   &::-webkit-scrollbar {
-  //     display: block;
-  //     /* for Chrome, Safari, and Opera */
-  //   }
-  // }
+  @include for-phone-only() {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 .card-content {

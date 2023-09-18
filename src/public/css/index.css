@@ -656,6 +656,12 @@ li.card {
   padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
+@media (max-width: 599px) {
+  .card-content-container.open {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
 
 .card-content {
   pointer-events: auto;
