@@ -8,6 +8,9 @@ li.card {
   position: relative;
   display: block;
   pointer-events: none;
+  @include for-phone-only() {
+    pointer-events: auto;
+  }
 }
 
 .card-content-container.open {

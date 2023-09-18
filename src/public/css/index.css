@@ -645,6 +645,11 @@ li.card {
   display: block;
   pointer-events: none;
 }
+@media (max-width: 599px) {
+  .card-content-container {
+    pointer-events: auto;
+  }
+}
 
 .card-content-container.open {
   top: 0;
