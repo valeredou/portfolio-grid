@@ -33,8 +33,6 @@ export default function Home({ params: { lng } }) {
   const { t } = useTranslation(lng);
   const [cardSelected, setCardSelected] = useState(null);
 
-  console.log(cardSelected);
-
   return (
     <motion.div layout className={`wrapper ${isMobile && "mobile"}`}>
       {/* Card showing my picture + name with effect */}

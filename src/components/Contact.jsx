@@ -22,14 +22,13 @@ export const Contact = (props) => {
 
     emailjs
       .sendForm(
-        "service_dzb6brc",
+        "service_8bfp4zp",
         "template_4j54djo",
         form.current,
         "OiM8_PrRocIyaTjH9"
       )
       .then(
         (result) => {
-          console.log(result.text);
           setFormState("sent");
           setTimeout(() => {
             setFormState("initial");
