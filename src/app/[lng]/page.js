@@ -71,7 +71,7 @@ export default function Home({ params: { lng } }) {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >
-          <a href="mailto:valere.douille@gmail.com" alt="mail">
+          <a target="_blank" href="mailto:valere.douille@gmail.com" alt="mail">
             <UilEnvelope className="link mail" />
           </a>
 
