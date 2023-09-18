@@ -28,6 +28,7 @@ import Link from "next/link";
 import ReactLogo from "@/components/ReactLogo";
 import { Contact } from "@/components/Contact";
 import { CardExtended } from "@/components/CardExtended";
+import i18next from "i18next";
 
 export default function Home({ params: { lng } }) {
   const { t } = useTranslation(lng);
@@ -36,6 +37,7 @@ export default function Home({ params: { lng } }) {
   return (
     <motion.div layout className={`wrapper ${isMobile && "mobile"}`}>
       {/* Card showing my picture + name with effect */}
+
       <CardHero t={t} />
 
       {/******************************************************
@@ -92,7 +94,7 @@ export default function Home({ params: { lng } }) {
           animate={{ y: 0, opacity: 1 }}
           className="flags-container"
         >
-          <Link href="/fr">
+          <a href="/fr">
             <Image
               alt="fr"
               className="flag"
@@ -100,9 +102,10 @@ export default function Home({ params: { lng } }) {
               height={20}
               src="/fr.png"
             />
-          </Link>
+          </a>
           {"|"}
-          <Link href="/en">
+
+          <a href="/en">
             <Image
               alt="en"
               className="flag"
@@ -110,7 +113,7 @@ export default function Home({ params: { lng } }) {
               height={20}
               src="/en.png"
             />
-          </Link>
+          </a>
           {/* <img src="fr.png" />
           <img src="en.png" /> */}
         </motion.div>
