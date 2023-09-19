@@ -94,26 +94,28 @@ export default function Home({ params: { lng } }) {
           animate={{ y: 0, opacity: 1 }}
           className="flags-container"
         >
-          <a href="/fr">
-            <Image
-              alt="fr"
-              className="flag"
-              width={50}
-              height={20}
-              src="/fr.png"
-            />
-          </a>
+          <Image
+            alt="fr"
+            onClick={() => {
+              i18next.changeLanguage("fr");
+            }}
+            className="flag"
+            width={50}
+            height={20}
+            src="/fr.png"
+          />
           {"|"}
 
-          <a href="/en">
-            <Image
-              alt="en"
-              className="flag"
-              width={50}
-              height={20}
-              src="/en.png"
-            />
-          </a>
+          <Image
+            alt="en"
+            onClick={() => {
+              i18next.changeLanguage("en");
+            }}
+            className="flag"
+            width={50}
+            height={20}
+            src="/en.png"
+          />
           {/* <img src="fr.png" />
           <img src="en.png" /> */}
         </motion.div>
