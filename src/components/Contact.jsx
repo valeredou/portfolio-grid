@@ -85,7 +85,7 @@ export const Contact = (props) => {
       </form>
 
       <div className="links-container">
-        <a target="_blank" href="mailto:valere.douille@gmail.com" alt="mail">
+        <a target="_blank" href="mailto:contact@valeredouille.com" alt="mail">
           <UilEnvelope className="link mail" />
         </a>
 
