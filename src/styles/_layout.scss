@@ -16,7 +16,7 @@
   row-gap: 32px;
   background: $color-background;
 
-  @include for-phone-only() {
+  @include for-low-desktop() {
     padding-top: 20px;
     grid-auto-columns: 1fr;
     grid-template-columns: 1fr;

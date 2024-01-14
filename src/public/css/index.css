@@ -16,7 +16,7 @@
   row-gap: 32px;
   background: #d7d7d7;
 }
-@media (max-width: 599px) {
+@media (max-width: 901px) {
   .wrapper {
     padding-top: 20px;
     grid-auto-columns: 1fr;
@@ -32,6 +32,7 @@
 .card {
   box-sizing: border-box;
   width: 100%;
+  max-height: 90vh;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
@@ -42,7 +43,7 @@
   align-items: flex-start;
   padding: 40px;
 }
-@media (max-width: 599px) {
+@media (max-width: 901px) {
   .card {
     grid-column-start: span 1 !important;
     grid-column-end: span 4 !important;
@@ -65,8 +66,7 @@
 .card h1.title {
   color: #fafafa;
   line-height: 32px;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.6rem;
   margin-bottom: 20px;
 }
 @media (max-width: 599px) {
@@ -222,7 +222,6 @@
 
 *************************************************************************/
 .card.hero {
-  font-family: "SF", sans-serif;
   font-size: 4rem;
   color: white;
   background-image: url("/vd-compressed.jpg");
@@ -287,7 +286,6 @@
   margin-bottom: 16px;
   font-size: 36px;
   line-height: 38px;
-  font-weight: 700;
 }
 
 /*************************************************************************  
@@ -341,8 +339,40 @@
 *************************************************************************/
 .card.about {
   grid-area: 3/1/5/2;
-  background-image: url("/images/gradient6.jpg");
-  background-size: cover;
+  background: linear-gradient(120.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 90.9%);
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 901px) {
+  .card.about {
+    padding-bottom: 250px;
+  }
+}
+.card.about .CV-container {
+  position: absolute;
+  right: -50px;
+  bottom: -1500px;
+  cursor: pointer;
+  transform-origin: top right;
+}
+.card.about .CV-container .CV {
+  border-radius: 20px;
+  transform: rotate(-20deg);
+}
+
+/*************************************************************************  
+
+                              WORD CLOUD CARD
+
+*************************************************************************/
+.card.word-cloud {
+  grid-area: 3/3/5/5;
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, #f4f4f4 90%);
+}
+.card.word-cloud .canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
 }
 
 /*************************************************************************  
@@ -350,17 +380,6 @@
                               REACT CARD
 
 *************************************************************************/
-.card.react {
-  grid-area: 3/2/4/4;
-  background-image: url("/images/gradient3.jpg");
-  background-size: cover;
-}
-.card.react .canvas {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-}
-
 /*************************************************************************  
 
                               HTMLCSSJS CARD
@@ -392,47 +411,56 @@
 
 /*************************************************************************  
 
-                              PHP CARD
+                              CUSTOM CARD
 
 *************************************************************************/
-.card.php {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #8992ba;
-}
-
-/*************************************************************************  
-
-                              PHP CARD
-
-*************************************************************************/
-.card.php {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgb(137, 146, 186);
-  background: linear-gradient(236deg, rgb(137, 146, 186) 0%, rgb(255, 255, 255) 100%);
-}
-
-/*************************************************************************  
-
-                              SQL CARD
-
-*************************************************************************/
-.card.sql {
+.card.custom {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  background-image: url("/images/data2.jpg");
-  background-size: cover;
+  align-items: flex-start;
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, #f4f4f4 90%);
+  position: relative;
 }
-.card.sql img {
-  width: 150px;
+.card.custom h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
 }
-.card.sql img:first-of-type {
-  width: 130px;
+.card.custom p {
+  text-align: justify;
+}
+.card.custom svg {
+  position: absolute;
+  bottom: -8px;
+  right: 50px;
+  transform-origin: bottom;
+  transform: scale(2.2) scaleX(-1);
+}
+
+/*************************************************************************  
+
+                              PLATFORM CARD
+
+*************************************************************************/
+.card.platform {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, #f4f4f4 90%);
+  position: relative;
+}
+.card.platform h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+.card.platform p {
+  text-align: justify;
+}
+.card.platform svg {
+  position: absolute;
+  bottom: -8px;
+  right: 50px;
+  transform-origin: bottom;
+  transform: scale(1.7);
 }
 
 /*************************************************************************  
@@ -441,13 +469,21 @@
 
 *************************************************************************/
 .card.work {
-  background-image: url("/images/gradient6.jpg");
-  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+  background: linear-gradient(120.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 90.9%);
   grid-area: 5/4/7/5;
 }
+@media (max-width: 901px) {
+  .card.work .text {
+    margin-bottom: 50px;
+  }
+}
 .card.work .working {
+  align-self: center;
   margin-top: auto;
   margin-bottom: auto;
+  max-width: 400px;
 }
 
 /*************************************************************************  
@@ -460,6 +496,29 @@
   background-color: #d7d7d7;
   grid-area: 5/2/7/4;
 }
+.card.esurvey .e-survey-logo {
+  max-width: 70%;
+  margin-top: -50px;
+}
+.card.esurvey .site-image-container {
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 500px;
+  transform-origin: top left;
+}
+@media (max-width: 901px) {
+  .card.esurvey .site-image-container {
+    width: 300px;
+  }
+}
+.card.esurvey .site-image-container img {
+  transform: rotate(20deg);
+  border-radius: 20px;
+}
+.card.esurvey .site-image-container img:hover {
+  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.075), 0 2px 2px hsla(0, 0%, 0%, 0.075), 0 4px 4px hsla(0, 0%, 0%, 0.075), 0 8px 8px hsla(0, 0%, 0%, 0.075), 0 16px 16px hsla(0, 0%, 0%, 0.075);
+}
 
 /*************************************************************************  
 
@@ -470,6 +529,25 @@
   padding: 0px;
   background-color: #d7d7d7;
   grid-area: 5/1/6/2;
+  position: relative;
+  overflow: hidden;
+}
+.card.differences h2 {
+  margin-top: -50px;
+}
+.card.differences .site-image-container {
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 300px;
+  transform-origin: top left;
+}
+.card.differences .site-image-container img {
+  transform: rotate(20deg);
+  border-radius: 20px;
+}
+.card.differences .site-image-container img:hover {
+  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.075), 0 2px 2px hsla(0, 0%, 0%, 0.075), 0 4px 4px hsla(0, 0%, 0%, 0.075), 0 8px 8px hsla(0, 0%, 0%, 0.075), 0 16px 16px hsla(0, 0%, 0%, 0.075);
 }
 
 /*************************************************************************  
@@ -481,6 +559,24 @@
   padding: 0px;
   background-color: #d7d7d7;
   grid-area: 6/1/7/2;
+}
+.card.portfolio h2 {
+  margin-top: -50px;
+}
+.card.portfolio .site-image-container {
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 300px;
+  transform-origin: top left;
+}
+.card.portfolio .site-image-container img {
+  border: 1px solid #86868b;
+  transform: rotate(20deg);
+  border-radius: 20px;
+}
+.card.portfolio .site-image-container img:hover {
+  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.075), 0 2px 2px hsla(0, 0%, 0%, 0.075), 0 4px 4px hsla(0, 0%, 0%, 0.075), 0 8px 8px hsla(0, 0%, 0%, 0.075), 0 16px 16px hsla(0, 0%, 0%, 0.075);
 }
 
 /*************************************************************************  
@@ -634,40 +730,11 @@
   /* will-change: transform; */
 }
 
-li.card {
-  cursor: pointer;
-}
+/*************************************
 
-.card-content-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-@media (max-width: 599px) {
-  .card-content-container {
-    pointer-events: auto;
-  }
-}
+      COMMUN
 
-.card-content-container.open {
-  top: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
-  z-index: 10;
-  overflow: auto;
-  padding: 40px 0;
-  -webkit-overflow-scrolling: touch;
-}
-@media (max-width: 599px) {
-  .card-content-container.open {
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
+*************************************/
 .card-content {
   pointer-events: auto;
   position: relative;
@@ -682,55 +749,8 @@ li.card {
 }
 @media (max-width: 599px) {
   .card-content {
-    overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
-}
-
-.open .card-content {
-  height: auto;
-  max-width: 700px;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.card-open-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.card-image-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.card-image-container a {
-  display: flex;
-  justify-content: center;
-}
-.card-image-container img {
-  border-radius: 15px;
-  max-width: 90%;
-  cursor: pointer;
-}
-
-.open .card-image-container,
-.open .title-container {
-  z-index: 1;
-}
-
-.open .title-container h2 {
-  margin-top: 35px;
-  font-size: 2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #121517;
 }
 
 .title-container {
@@ -755,28 +775,6 @@ h2.title {
   text-transform: uppercase;
 }
 
-.overlay {
-  z-index: 2;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.8);
-  will-change: opacity;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-}
-
-.overlay a {
-  display: block;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .content-container {
   padding: 35px 35px 35px 35px;
   max-width: 700px;
@@ -790,33 +788,52 @@ h2.title {
   }
 }
 
-.open .content-container .presentation .text,
-.open .content-container .tech .text,
-.open .content-container .techstack .text {
-  padding: 30px 10px;
+li.card {
+  cursor: pointer;
 }
-.open .content-container h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #1d3557;
-}
-.open .content-container .tags-container {
+
+.card-image-container {
+  width: 100%;
+  height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 5px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  cursor: pointer;
 }
-.open .content-container .tags-container .tag {
-  background: #7081dd;
-  color: #fafafa;
-  border-radius: 10px;
-  padding: 5px 10px;
+.card-image-container a {
+  display: flex;
+  justify-content: center;
 }
-.open .content-container .tags-container .tag.back {
-  background-color: #121517;
+.card-image-container img {
+  border-radius: 15px;
+  max-width: 90%;
+  cursor: pointer;
+}
+
+/*************************************
+
+      CARTE PROJET FERMEE
+
+*************************************/
+.card-content-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+  pointer-events: none;
+}
+@media (max-width: 599px) {
+  .card-content-container {
+    pointer-events: auto;
+  }
+}
+
+.card-open-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .open-button {
@@ -837,6 +854,101 @@ h2.title {
   color: black;
   width: 90%;
   height: 90%;
+}
+
+/*************************************
+
+      CARTE PROJET OUVERTE
+
+*************************************/
+.card-content-container.open {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 10;
+  overflow: auto;
+  padding: 40px 0;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 599px) {
+  .card-content-container.open {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+.card-content-container.open .card-content {
+  height: auto;
+  max-width: 700px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.card-content-container.open .card-image-container,
+.card-content-container.open .title-container {
+  z-index: 1;
+}
+.card-content-container.open .title-container {
+  display: flex;
+  flex-direction: column;
+}
+.card-content-container.open .title-container a {
+  text-decoration: underline;
+}
+.card-content-container.open .title-container h2 {
+  margin-top: 35px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #121517;
+}
+.card-content-container.open .content-container .presentation .text,
+.card-content-container.open .content-container .tech .text,
+.card-content-container.open .content-container .techstack .text {
+  padding: 30px 10px;
+}
+.card-content-container.open .content-container h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #1d3557;
+}
+.card-content-container.open .content-container .tags-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.card-content-container.open .content-container .tags-container .tag {
+  background: #7081dd;
+  color: #fafafa;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.card-content-container.open .content-container .tags-container .tag.back {
+  background-color: #121517;
+}
+
+.overlay {
+  z-index: 2;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  will-change: opacity;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+.overlay a {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .close-button {
@@ -874,12 +986,4 @@ h2.title {
     color: black;
     background: #d7d7d7;
   }
-  @font-face {
-    font-family: "SF";
-    font-weight: 400;
-    src: url("/public/fonts/SFPRODISPLAYREGULAR.OTF");
-  }
-}
-body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }/*# sourceMappingURL=index.css.map */

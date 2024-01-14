@@ -27,14 +27,4 @@
     color: black;
     background: $color-background;
   }
-
-  @font-face {
-    font-family: "SF";
-    font-weight: 400;
-    src: url("/public/fonts/SFPRODISPLAYREGULAR.OTF");
-  }
-}
-
-body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }

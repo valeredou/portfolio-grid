@@ -1,15 +1,13 @@
 import React, { useRef } from "react";
 import { motion, useMotionValue } from "framer-motion";
-import { LoremIpsum } from "react-lorem-ipsum";
 import { cardData } from "@/Cardlist";
 import { UilTimes } from "@iconscout/react-unicons";
 import { Interweave } from "interweave";
 import { isMobile } from "react-device-detect";
+import { SFPro_bold } from "@/app/fonts";
 
 export function CardExtended({ id, setCardSelected, isSelected, t }) {
-  const { category, title, website, tags } = cardData.find(
-    (item) => item.id === id
-  );
+  const { title, website, tags } = cardData.find((item) => item.id === id);
 
   return (
     <>
@@ -38,11 +36,15 @@ export function CardExtended({ id, setCardSelected, isSelected, t }) {
             </a>
           </motion.div>
           <motion.div
-            className="title-container"
+            className={`title-container ${SFPro_bold}`}
             layoutId={`title-container-${id}`}
           >
             <h2>{title}</h2>
+            <motion.a href={website} target="__blank">
+              {t("work.voir_site")}
+            </motion.a>
           </motion.div>
+
           {isSelected && (
             <div
               className="close-button"

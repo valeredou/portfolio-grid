@@ -14,7 +14,7 @@ import { isMobile } from "react-device-detect";
 import { UilEnvelope } from "@iconscout/react-unicons";
 import Lottie from "lottie-react";
 import linkedinAnimation from "/public/linkedin-json.json";
-import workingAnimation from "/public/working-json.json";
+import workingAnimation from "/public/dev-json.json";
 import githubAnimation from "/public/github-json.json";
 
 //Custom
@@ -29,13 +29,25 @@ import ReactLogo from "@/components/ReactLogo";
 import { Contact } from "@/components/Contact";
 import { CardExtended } from "@/components/CardExtended";
 import i18next from "i18next";
+import {
+  SFPro_bold,
+  SFPro_light,
+  SFPro_medium,
+  SFPro_regular,
+  SFPro_semibold,
+} from "../fonts";
+import WordCloud from "@/components/WordCloud";
+import SvgDraw from "@/components/SvgDraw";
 
 export default function Home({ params: { lng } }) {
   const { t } = useTranslation(lng);
   const [cardSelected, setCardSelected] = useState(null);
 
   return (
-    <motion.div layout className={`wrapper ${isMobile && "mobile"}`}>
+    <motion.div
+      layout
+      className={`wrapper ${isMobile && "mobile"} ${SFPro_light.className}`}
+    >
       {/* Card showing my picture + name with effect */}
 
       <CardHero t={t} />
@@ -49,6 +61,7 @@ export default function Home({ params: { lng } }) {
         <motion.h1
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
+          className={SFPro_semibold.className}
         >
           {t("hello")}{" "}
           <span role="img" className="hello" aria-label="hello">
@@ -142,9 +155,37 @@ export default function Home({ params: { lng } }) {
           <br />
           {t("about.text3")}
         </div>
+
+        <motion.a
+          initial={{ opacity: 0, bottom: "-400px" }}
+          whileInView={{ opacity: 1, bottom: "-250px" }}
+          whileHover={{ bottom: "-280px", rotate: 20 }}
+          href="/images/CV-VD.pdf"
+          target="__blank"
+          className="CV-container"
+        >
+          <Image
+            alt="CV"
+            title="CV"
+            className="CV"
+            width={300}
+            height={500}
+            src="/images/CV-VD.jpg"
+          />
+        </motion.a>
       </Card>
 
-      <Card className={"react"} tag={t("skills")} animation="top" delay={0.25}>
+      <Card
+        className={"word-cloud"}
+        tag={t("skills")}
+        animation="top"
+        delay={0.25}
+      >
+        {/* <ReactLogo /> */}
+        <WordCloud />
+      </Card>
+
+      {/* <Card className={"react"} tag={t("skills")} animation="top" delay={0.25}>
         <ReactLogo />
       </Card>
 
@@ -183,36 +224,24 @@ export default function Home({ params: { lng } }) {
           />
           <div className="name">JavaScript</div>
         </div>
+      </Card> */}
+
+      <Card className={"custom"} animation="right" delay={0.27} id="custom">
+        <SvgDraw className="dev" content={"dev"} reveal={"middle"} />
+        <h2 className={SFPro_bold.className}>{t("about.sur_mesure")}</h2>
+        <p>{t("about.sur_mesure_texte")}</p>
       </Card>
 
-      <Card className={"php"} tag={t("skills")} animation="right" delay={0.27}>
-        <Image
-          alt="php"
-          className="php"
-          title="php"
-          width={100}
-          height={20}
-          src="/images/php.png"
-        />
-      </Card>
+      <Card
+        className={"platform"}
+        // tag={t("service")}
+        animation="right"
+        delay={0.1}
+      >
+        <SvgDraw className="tools" content={"tools"} reveal={"enter"} />
 
-      <Card className={"sql"} tag={t("skills")} animation="right" delay={0.1}>
-        <Image
-          alt="sql"
-          title="sql"
-          className="sql"
-          width={100}
-          height={20}
-          src="/images/sql.png"
-        />
-        <Image
-          title="couchbase"
-          alt="nosql"
-          className="nosql"
-          width={100}
-          height={20}
-          src="/images/couchbase.png"
-        />
+        <h2 className={SFPro_bold.className}> {t("about.plateforme")}</h2>
+        <p>{t("about.plateforme_texte")}</p>
       </Card>
 
       {/******************************************************
@@ -226,11 +255,18 @@ export default function Home({ params: { lng } }) {
           {t("work.intro1")}
         </div>
         <div className="text">{t("work.intro2")}</div>
-        <Lottie className="working" animationData={workingAnimation} />
+        <motion.span
+          className="working"
+          initial={{ scale: 0.5 }}
+          whileInView={{ scale: 1.3 }}
+        >
+          <Lottie animationData={workingAnimation} />
+        </motion.span>
       </Card>
 
       <AnimatePresence>
         {cardSelected !== null && (
+          // card shown when clicked on a project
           <CardExtended
             id={cardSelected}
             isSelected={true}

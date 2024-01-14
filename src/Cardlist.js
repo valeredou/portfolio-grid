@@ -8,6 +8,7 @@ export const cardData = [
     title: "e-survey",
     backgroundColor: "#6a67f6",
     website: "https://www.e-survey.io/fr/",
+    image: "/images/esurvey.png",
     tags: [
       "React",
       "Framer Motion",
@@ -27,6 +28,7 @@ export const cardData = [
     title: "3Differences",
     backgroundColor: "#ffffff",
     website: "https://seven-differences.vercel.app/",
+    image: "/images/differences.png",
     tags: [
       "React",
       "Next.js",
@@ -45,6 +47,7 @@ export const cardData = [
     title: "Portfolio",
     backgroundColor: "#ffffff",
     website: "https://portfolio-container-henna.vercel.app/",
+    image: "/images/portfolio.png",
     tags: [
       "React",
       "Next.js",

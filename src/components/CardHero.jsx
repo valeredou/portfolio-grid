@@ -2,6 +2,7 @@ import { motion, useMotionValue } from "framer-motion";
 import { useLayoutEffect, useRef } from "react";
 import Card from "./Card";
 import { gsap } from "gsap";
+import { SFPro_bold, SFPro_light, SFPro_regular } from "@/app/fonts";
 
 const CardHero = ({ t }) => {
   // When this card is selected, attach a wheel event listener
@@ -35,7 +36,7 @@ const CardHero = ({ t }) => {
   });
   return (
     <Card className="hero" id="VD" animation="left">
-      <div ref={title} id="title" className="title">
+      <div ref={title} id="title" className={`title ${SFPro_bold.className}`}>
         {name.split("").map((letter, index) => {
           return (
             <div key={index} className="char">
@@ -44,7 +45,7 @@ const CardHero = ({ t }) => {
           );
         })}
       </div>
-      <div ref={job} className="job">
+      <div ref={job} className={`job ${SFPro_regular.className}`}>
         {t("developpeur")}
       </div>
     </Card>

@@ -1,5 +1,6 @@
 "use client";
 
+import { SFPro_bold } from "@/app/fonts";
 import { AnimatePresence, motion, useMotionValue } from "framer-motion";
 import { useRef } from "react";
 import { isMobile } from "react-device-detect";
@@ -39,7 +40,11 @@ const Card = ({
       ref={containerRef}
     >
       {tag && <div className="tag">{tag}</div>}
-      {title && <h1 className="title">{title}</h1>}
+      {title && (
+        <h1 className={`title ${SFPro_bold.className}`}>
+          {title.toUpperCase()}
+        </h1>
+      )}
       {children}
     </motion.div>
   );

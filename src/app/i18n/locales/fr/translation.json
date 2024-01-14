@@ -1,14 +1,19 @@
 {
   "hello": "Bonjour",
   "developpeur": "Développeur Web",
-  "intro": "Je suis un développeur freelance spécialisé dans le développement web front-end depuis 5 ans. Passionné par la création de belles interfaces, l'expérience utilisateur (UX) et les sites rapides, j'ai acquis une expertise solide dans le domaine.",
+  "intro": "Je suis un développeur freelance spécialisé dans le développement web front-end depuis 6 ans. Passionné par la création de belles interfaces, l'expérience utilisateur (UX) et les sites rapides, j'ai acquis une expertise solide dans le domaine.",
   "about": {
     "title": "À propos",
     "text1": "Basé à Lille, j'ai accumulé plusieurs années d'expérience en entreprise, ce qui m'a permis d'acquérir une vision globale du monde du web.",
     "text2": "Mon objectif principal est de fournir des expériences utilisateur agréables en créant des interfaces esthétiques et intuitives. Je crois fermement que le design et la fonctionnalité vont de pair pour offrir des sites web de qualité. ",
-    "text3": "N'hésitez pas à me contacter. Je serais ravi de discuter de votre projet et de contribuer à son succès."
+    "text3": "N'hésitez pas à me contacter. Je serais ravi de discuter de votre projet et de contribuer à son succès.",
+    "sur_mesure": "Site sur-mesure",
+    "sur_mesure_texte": "Qu'il s'agisse d'un projet de site vitrine, de site e-commerce, je peux vous aider à vous démarquer des centaines de sites existant en utilisant des technologies de pointe.",
+    "plateforme": "Plateforme / SaaS",
+    "plateforme_texte": "Amélioration d'une plateforme existante ? Création de nouvelles fonctionnalités ? Projet de SaaS ? A travers mon expérience en entreprise, j'ai acquis les compétences permettant de mettre en place vos idées."
   },
   "skills": "Compétences",
+  "service": "Services",
   "work": {
     "title": "Projets",
     "tag": "Projets",
@@ -17,7 +22,8 @@
 
     "presentation": "Présentation",
     "tech": "Technique",
-    "techno_utilise": "Technologies utilisées"
+    "techno_utilise": "Technologies utilisées",
+    "voir_site": "Ouvrir le site"
   },
   "esurvey": {
     "presentation": "Le site présenté ici est e-survey. Il s'agit d'une plateforme (disponible dans plusieurs langues) de mise en ligne d'enquêtes automatisée. Avec un site vitrine élégant, un module de création intuitif et une gestion automatisée des réponses, e-survey rend le processus rapide et accessible.<br /> Le but principal de la plateforme est de simplifier la création d'enquêtes en ligne par le biais d'une interface épurée, conçue en étroite collaboration avec des professionnels du secteur.",

@@ -1,14 +1,19 @@
 {
   "hello": "Hello",
   "developpeur": "Web Developer",
-  "intro": " I am a freelance web developer specializing in front-end web development for the past 5 years. I am passionate about creating beautiful interfaces, UX, and fast websites.",
+  "intro": " I am a freelance web developer specializing in front-end web development for the past 6 years. I am passionate about creating beautiful interfaces, UX, and fast websites.",
   "about": {
     "title": "About",
     "text1": "Based in Lille, I have several years of experience in corporate development, which has allowed me to gain a comprehensive understanding of the web industry. ",
     "text2": "My main goal is to provide pleasant user experiences by creating aesthetic and intuitive interfaces. I firmly believe that design and functionality go hand in hand to deliver quality websites.",
-    "text3": "Feel free to contact me. I would be delighted to discuss your project and contribute to its success."
+    "text3": "Feel free to contact me. I would be delighted to discuss your project and contribute to its success.",
+    "sur_mesure": "Custom Website",
+    "sur_mesure_texte": "Whether it's a project for a showcase website or an e-commerce site, I can help you stand out from the hundreds of existing sites by using cutting-edge technologies.",
+    "plateforme": "Platform / SaaS",
+    "plateforme_texte": "Improvement of an existing platform? Creation of new features? SaaS project? Through my corporate experience, I have acquired the skills necessary to implement your ideas."
   },
   "skills": "Skills",
+  "service": "Services",
   "work": {
     "title": "Projects",
     "tag": "Project",
@@ -17,7 +22,8 @@
 
     "presentation": "Introduction",
     "tech": "Technology",
-    "techno_utilise": "Tech stack"
+    "techno_utilise": "Tech stack",
+    "voir_site": "Open website"
   },
   "esurvey": {
     "presentation": "The website presented here is e-survey. It is a platform (available in multiple languages) for automated online survey deployment. With an elegant showcase site, an intuitive creation module, and automated response management, e-survey makes the process fast and accessible.<br /> The main goal of the platform is to simplify online survey creation through a streamlined interface, designed in close collaboration with industry professionals.",
