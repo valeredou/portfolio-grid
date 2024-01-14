@@ -74,8 +74,9 @@ function Word({ children, ...props }) {
         onPointerOut={out}
         onClick={() => console.log("clicked")}
         {...fontProps}
-        children={children}
-      />
+      >
+        {children}
+      </Text>
     </Billboard>
   );
 }
@@ -139,7 +140,11 @@ function Cloud({ count = 4, radius = 20 }) {
   }, [count, radius]);
 
   const allWords = words.map(([pos, word], index) => {
-    return <Word key={index} position={pos} children={word} />;
+    return (
+      <Word key={index} position={pos}>
+        {word}
+      </Word>
+    );
   });
 
   return <group ref={ref}>{allWords}</group>;
